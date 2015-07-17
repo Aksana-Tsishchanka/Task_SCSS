@@ -1,0 +1,50 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: blue;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+#home {
+  height: 1100px;
+}
+
+#about {
+  height: 1964px;
+}
+
+
+#team {
+  height: 1765px;
+}
+
+#service {
+  height: 2310px;
+}
+#portfolio {
+  height: 1475px;
+}
+#contact {
+  height: 1325px;
+}
+
+header {
+  height: 11%;
+  background-color: #006600;
+}
+
+section.feature{
+  height: 1.5%;
+  background-color: red;
+}
+section.about{
+  height: 8%;
+  background-color: #004444;
+}
+
+section.quote{
+  height: 10.5%;
+  background-color: #00DD00;
+}
+//30.8%
+
