@@ -1,16 +1,57 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: blue;
+$pad: 5px;
+
+
+@mixin grid-container {
+  width: 100%;
+  text-align: center;
+}
+
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin column-col($n) {
+  width: $n * 100% / 12;
+  box-sizing: border-box;
+  padding: $pad;
+  float: left;
+}
+
+
+html{
+  height: 100%;
+}
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  height: 100%;
+  margin: 0 0;
 }
 #home {
-  height: 1100px;
+  height: 1000px;
+  @include grid-container;
+}
+
+header {
+
+  h1, p {
+    @include column-col(12);
+  }
 }
 
 #about {
   height: 1964px;
+  @include column-col(6);
 }
 
 
@@ -29,8 +70,17 @@ body {
 }
 
 header {
-  height: 11%;
-  background-color: #006600;
+  height: 100%;
+  background-image: url(../../src/assets/header/header_bg.png);
+  background-size: cover;
+}
+
+.header-nav {
+  height: 40%;
+}
+.header-scroller {
+  height: 10%;
+  @include column-col(12);
 }
 
 section.feature{
@@ -46,5 +96,3 @@ section.quote{
   height: 10.5%;
   background-color: #00DD00;
 }
-//30.8%
-
