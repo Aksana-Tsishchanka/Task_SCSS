@@ -6,6 +6,8 @@ $pad: 5px;
 @mixin grid-container {
   width: 100%;
   text-align: center;
+  padding: 0 21.5% 0 21.5%;
+  box-sizing: border-box;
 }
 
 %clearfix {
@@ -36,22 +38,66 @@ body {
   color: $primary-color;
   height: 100%;
   margin: 0 0;
+  width: 100%;
+  max-width: 2000px;
+}
+img {
+  max-width: 100%;
 }
 #home {
-  height: 1000px;
-  @include grid-container;
+  height: 100%;
+  background-image: url(../../src/assets/header/header_bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 header {
-
   h1, p {
     @include column-col(12);
+    font-size: 1.5em;
+  }
+  h1 {
+    height: 18%;
+  }
+  p {
+    height: 27%;
+  }
+  .home__scroller {
+    height: 18%;
   }
 }
+.home__nav {
+  height: 36%;
+}
+
+.home-nav__about {
+  @include column-col(2);
+}
+
+.home-nav__team {
+  @include column-col(2);
+}
+
+.home-nav__services {
+  @include column-col(2);
+}
+.home-nav__portfolio {
+  @include column-col(2);
+}
+.home-nav__blog {
+  @include column-col(2);
+}
+
+.home-nav__contact {
+  @include column-col(2);
+}
+.home__scroller {
+  @include column-col(12);
+}
+
 
 #about {
-  height: 1964px;
-  @include column-col(6);
+  height: 100%;
 }
 
 
@@ -71,8 +117,7 @@ header {
 
 header {
   height: 100%;
-  background-image: url(../../src/assets/header/header_bg.png);
-  background-size: cover;
+  @include grid-container;
 }
 
 .header-nav {
