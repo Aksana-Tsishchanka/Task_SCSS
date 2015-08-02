@@ -58,8 +58,6 @@ body {
   }
 }
 
-
-
 header {
   h1, p {
     @include column-col(12);
@@ -83,6 +81,7 @@ header {
   @extend %clearfix;
   position: relative;
   font-size: 18px / 16px *1em;
+  list-style-type: none;
 }
 
 .home-nav-item {
@@ -133,15 +132,17 @@ header {
 }
 
 .home-scroll-container {
-  @include column-col(12);
-  background-image: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
-  background-size: 100% auto;
-  padding-bottom: 100 / 1100 * 100%;
+  
 }
 
 .home-scroll {
+  width: 13%;
+  background: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
+  background-size: contain;
+  padding-bottom: 15%;
   margin: 0 auto;
-  @include column-col(2);
+  width: 2 * 100% / 12
+
 }
 
 #about {
