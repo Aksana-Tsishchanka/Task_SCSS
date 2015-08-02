@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My site</title>
-    <link rel="stylesheet" type="text/css" href="build/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="build/css/style.css"/>
+
 </head>
 <body>
     <div id="home">
         <header>
-            <h1><span>Bhagas</span><span>kara.</span></h1>
-            <p>Fusce rutrum pretium lorem semper nulla.  Vestibulum ornare cur</p>
+            <h1><span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span></h1>
+            <h2 class="base-color">Fusce rutrum pretium lorem semper nulla.</h2>
+            <h3 class="base-color">Vestibulum ornare cursus nisl, fermentum tincidunt libero pretium et. Maecenas interdum ligula non fermentum fringilla.</h3>
             <div class="home__nav">
-                <div class="home-nav__about"><img src="src/assets/header/1.svg" alt="" /></div>
-                <div class="home-nav__team">team</div>
-                <div class="home-nav__services">services</div>
-                <div class="home-nav__portfolio">portfolio</div>
-                <div class="home-nav__blog">blog</div>
-                <div class="home-nav__contact">contact</div>
+                <div class="home-nav-item home-nav__about"><span class="home-nav-title">About</span></div>
+                <div class="home-nav-item home-nav__team"><span class="home-nav-title">Team</span></div>
+                <div class="home-nav-item home-nav__services"><span class="home-nav-title">Services</span></div>
+                <div class="home-nav-item home-nav__portfolio"><span class="home-nav-title">Portfolio</span></div>
+                <div class="home-nav-item home-nav__blog"><span class="home-nav-title">Blog</span></div>
+                <div class="home-nav-item home-nav__contact"><span class="home-nav-title">Contact</span></div>
             </div>
-            <div class="home__scroller">scroler</div>
+            <div class="home-scroll-container">
+                <div class="home-scroll">
+
+                </div>
+            </div>
         </header>
     </div>
     <div id="about">

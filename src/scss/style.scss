@@ -1,18 +1,24 @@
 $font-stack: Helvetica, sans-serif;
+$font-size: 16px;
 $primary-color: blue;
+$base-color: #FFFFFF;
+$second-color-h1: #a93d8b;
 $pad: 5px;
+$max-width-grid-container: 1145px;
+$gutter: 32px / $max-width-grid-container * 100%;
+
 
 
 @mixin grid-container {
   width: 100%;
   text-align: center;
-  padding: 0 21.5% 0 21.5%;
   box-sizing: border-box;
+  max-width: $max-width-grid-container;
+  margin: 0 auto;
 }
 
 %clearfix {
-  &:before,
-  &:after {
+  &:before, &:after  {
     content: " ";
     display: table;
   }
@@ -22,79 +28,121 @@ $pad: 5px;
 }
 
 @mixin column-col($n) {
-  width: $n * 100% / 12;
+  width: $n * 100% / 12 - $gutter;
   box-sizing: border-box;
-  padding: $pad;
   float: left;
+  margin-right: $gutter;
+
+  &:last-child {
+    margin-right:0%;
+  }
 }
 
-
-html{
-  height: 100%;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font: 100% $font-stack;
+  font: 100% $font-size $font-stack;
   color: $primary-color;
-  height: 100%;
-  margin: 0 0;
-  width: 100%;
-  max-width: 2000px;
 }
-img {
-  max-width: 100%;
-}
+
 #home {
-  height: 100%;
-  background-image: url(../../src/assets/header/header_bg.png);
+  height: 100vh;
   background-size: 100%;
-  background-repeat: no-repeat;
+  background: url(../../src/assets/header/header_bg.png) no-repeat;
+
+  h1 {
+    font-size: 90/16 * 1em;
+  }
 }
+
+
 
 header {
   h1, p {
     @include column-col(12);
-    font-size: 1.5em;
   }
-  h1 {
-    height: 18%;
+  h2 {
+    margin-bottom: 34 / 1100 * 100%;
   }
-  p {
-    height: 27%;
-  }
-  .home__scroller {
-    height: 18%;
+  h3 {
+    margin-bottom: 120/1100 * 100%;
   }
 }
+.base-color {
+  color: $base-color;
+}
+
+.second-color {
+  color: $second-color-h1;
+}
+
 .home__nav {
-  height: 36%;
+  @extend %clearfix;
+  position: relative;
+  font-size: 18px / 16px *1em;
+}
+
+.home-nav-item {
+  position:relative;
+  height: 0;
+  padding-bottom: 18.18%;
 }
 
 .home-nav__about {
   @include column-col(2);
+  background: url(../../src/assets/header/header_nav/about.svg) no-repeat;
+  background-size: 100% auto;
 }
 
 .home-nav__team {
   @include column-col(2);
+  background: url(../../src/assets/header/header_nav/team.svg) no-repeat;
+  background-size: 100% auto;
 }
 
 .home-nav__services {
   @include column-col(2);
+  background: url(../../src/assets/header/header_nav/services.svg) no-repeat;
+  background-size: 100% auto;
 }
 .home-nav__portfolio {
   @include column-col(2);
+  background: url(../../src/assets/header/header_nav/portfolio.svg) no-repeat;
+  background-size: 100% auto;
 }
 .home-nav__blog {
   @include column-col(2);
+  background: url(../../src/assets/header/header_nav/blog.svg) no-repeat;
+  background-size: 100% auto;
 }
 
 .home-nav__contact {
   @include column-col(2);
-}
-.home__scroller {
-  @include column-col(12);
+  background: url(../../src/assets/header/header_nav/contact.svg) no-repeat;
+  background-size: 100% auto;
 }
 
+.home-nav-title {
+  position: absolute;
+  color: $base-color;
+  top: 60%;
+  left: 35%;
+}
+
+.home-scroll-container {
+  @include column-col(12);
+  background-image: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
+  background-size: 100% auto;
+  padding-bottom: 100 / 1100 * 100%;
+}
+
+.home-scroll {
+  margin: 0 auto;
+  @include column-col(2);
+}
 
 #about {
   height: 100%;
