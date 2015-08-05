@@ -2,12 +2,14 @@ $font-stack: Helvetica, sans-serif;
 $font-size: 16px;
 $primary-color: blue;
 $base-color: #FFFFFF;
-$second-color-h1: #a93d8b;
-$pad: 5px;
+$second-color: #a93d8b;
 $max-width-grid-container: 1145px;
 $gutter: 32px / $max-width-grid-container * 100%;
-
-
+$second-color: #a93d8b;
+$base-color-about-nav: #676767;
+$margin-indent-home-nav: 185px / 1100px * 100vh;
+$max-width-grid-container: 1145px/1100px *100vh;
+$gutter: 32px / 1100px * 100vh;
 
 @mixin grid-container {
   width: 100%;
@@ -17,7 +19,7 @@ $gutter: 32px / $max-width-grid-container * 100%;
   margin: 0 auto;
 }
 
-%clearfix {
+@mixin clearfix {
   &:before, &:after  {
     content: " ";
     display: table;
@@ -28,19 +30,31 @@ $gutter: 32px / $max-width-grid-container * 100%;
 }
 
 @mixin column-col($n) {
-  width: $n * 100% / 12 - $gutter;
+  width: $n * $max-width-grid-container / 12 - $gutter;
   box-sizing: border-box;
   float: left;
+  @include margin-right;
+}
+
+@mixin margin-right {
   margin-right: $gutter;
 
   &:last-child {
     margin-right:0%;
   }
+
+  &:only-of-type {
+    margin: 0 auto;
+  }
 }
 
-* {
+@mixin zeroing-margin-pad {
   margin: 0;
   padding: 0;
+}
+
+@mixin list-style-none {
+  list-style: none;
 }
 
 body {
@@ -50,23 +64,31 @@ body {
 
 #home {
   height: 100vh;
-  background-size: 100%;
+  background-size: contain;
   background: url(../../src/assets/header/header_bg.png) no-repeat;
-
-  h1 {
-    font-size: 90/16 * 1em;
-  }
+  background-position: center;
 }
 
 header {
-  h1, p {
-    @include column-col(12);
+  @include grid-container;
+  h1 {
+    @include zeroing-margin-pad;
+    @include clearfix;
+    font-size: 90px/1100px * 100vh;
+    padding-top: 85px / 1100px * 100vh;
+    padding-bottom: 80px / 1100px * 100vh;
+
   }
   h2 {
-    margin-bottom: 34 / 1100 * 100%;
+    @include zeroing-margin-pad;
+    margin-bottom: 34px / 1100px * 100vh;
+    font-size: 48px / 1100px * 100vh;
+    @include clearfix;
   }
   h3 {
-    margin-bottom: 120/1100 * 100%;
+    font-size: 24px / 1100px * 100vh;
+    margin-bottom: 110px /1100px * 100vh;
+    @include clearfix;
   }
 }
 .base-color {
@@ -74,77 +96,82 @@ header {
 }
 
 .second-color {
-  color: $second-color-h1;
+  color: $second-color;
 }
 
-.home__nav {
-  @extend %clearfix;
-  position: relative;
-  font-size: 18px / 16px *1em;
-  list-style-type: none;
+.home-nav {
+  @include grid-container;
+  @include clearfix;
+  font-size: 18px / 1100px * 100vh;
+  @include list-style-none;
+  @include zeroing-margin-pad;
 }
 
 .home-nav-item {
   position:relative;
   height: 0;
-  padding-bottom: 18.18%;
+  padding-bottom: $margin-indent-home-nav;
 }
-
-.home-nav__about {
+.home-nav-item__about {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/about.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  margin-top: $margin-indent-home-nav;
 }
 
-.home-nav__team {
+.home-nav-item__team {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/team.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  margin-top: $margin-indent-home-nav;
 }
 
-.home-nav__services {
+.home-nav-item__services {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/services.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  margin-bottom: $margin-indent-home-nav;
 }
-.home-nav__portfolio {
+.home-nav-item__portfolio {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/portfolio.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: $margin-indent-home-nav;
 }
-.home-nav__blog {
+.home-nav-item__blog {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/blog.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  margin-top: $margin-indent-home-nav;
 }
 
-.home-nav__contact {
+.home-nav-item__contact {
   @include column-col(2);
   background: url(../../src/assets/header/header_nav/contact.svg) no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
+  margin-top: $margin-indent-home-nav;
 }
 
 .home-nav-title {
   position: absolute;
   color: $base-color;
-  top: 60%;
-  left: 35%;
+  top: 123px /1100px * 100vh;
+  left: 60px/ 1100px * 100vh;
 }
 
 .home-scroll-container {
-  
+
 }
 
 .home-scroll {
-  width: 13%;
+  @include column-col(2);
   background: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
   background-size: contain;
-  padding-bottom: 15%;
-  margin: 0 auto;
-  width: 2 * 100% / 12
-
+  padding-bottom: 109px/1100px*100vh;
+  float: none;
 }
-
+/*
 #about {
   height: 100%;
 }
@@ -164,18 +191,6 @@ header {
   height: 1325px;
 }
 
-header {
-  height: 100%;
-  @include grid-container;
-}
-
-.header-nav {
-  height: 40%;
-}
-.header-scroller {
-  height: 10%;
-  @include column-col(12);
-}
 
 section.feature{
   height: 1.5%;
@@ -190,3 +205,4 @@ section.quote{
   height: 10.5%;
   background-color: #00DD00;
 }
+*/
