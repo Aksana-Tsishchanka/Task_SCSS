@@ -7,6 +7,7 @@ $max-width-grid-container: 1145px;
 $gutter: 32px / $max-width-grid-container * 100%;
 $second-color: #a93d8b;
 $base-color-about-nav: #676767;
+$base-color-nav: #765c5c;
 $margin-indent-home-nav: 185px / 1100px * 100vh;
 $max-width-grid-container: 1145px/1100px *100vh;
 $gutter: 32px / 1100px * 100vh;
@@ -17,6 +18,7 @@ $gutter: 32px / 1100px * 100vh;
   box-sizing: border-box;
   max-width: $max-width-grid-container;
   margin: 0 auto;
+  @include clearfix;
 }
 
 @mixin clearfix {
@@ -30,21 +32,25 @@ $gutter: 32px / 1100px * 100vh;
 }
 
 @mixin column-col($n) {
-  width: $n * $max-width-grid-container / 12 - $gutter;
+  width: $n * ($max-width-grid-container + $gutter) / 12 - $gutter;
   box-sizing: border-box;
   float: left;
   @include margin-right;
+}
+
+@mixin offsets-column($n) {
+  margin-left: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
 }
 
 @mixin margin-right {
   margin-right: $gutter;
 
   &:last-child {
-    margin-right:0%;
+    margin-right: 0;
   }
 
   &:only-of-type {
-    margin: 0 auto;
+    //margin: 0 auto;
   }
 }
 
@@ -58,13 +64,12 @@ $gutter: 32px / 1100px * 100vh;
 }
 
 body {
-  font: 100% $font-size $font-stack;
   color: $primary-color;
+  font: 100% $font-size $font-stack;
 }
 
 #home {
   height: 100vh;
-  background-size: contain;
   background: url(../../src/assets/header/header_bg.png) no-repeat;
   background-position: center;
 }
@@ -73,22 +78,18 @@ header {
   @include grid-container;
   h1 {
     @include zeroing-margin-pad;
-    @include clearfix;
-    font-size: 90px/1100px * 100vh;
     padding-top: 85px / 1100px * 100vh;
     padding-bottom: 80px / 1100px * 100vh;
-
+    font-size: 90px/1100px * 100vh;
   }
   h2 {
     @include zeroing-margin-pad;
     margin-bottom: 34px / 1100px * 100vh;
     font-size: 48px / 1100px * 100vh;
-    @include clearfix;
   }
   h3 {
-    font-size: 24px / 1100px * 100vh;
     margin-bottom: 110px /1100px * 100vh;
-    @include clearfix;
+    font-size: 24px / 1100px * 100vh;
   }
 }
 .base-color {
@@ -101,63 +102,67 @@ header {
 
 .home-nav {
   @include grid-container;
-  @include clearfix;
   font-size: 18px / 1100px * 100vh;
   @include list-style-none;
   @include zeroing-margin-pad;
+  @include clearfix;
+
+  &-item {
+    position:relative;
+    padding-bottom: $margin-indent-home-nav;
+    height: 0;
+  }
 }
 
-.home-nav-item {
-  position:relative;
-  height: 0;
-  padding-bottom: $margin-indent-home-nav;
+@mixin background-style($image) {
+  background: url(../../src/assets/header/header_nav/#{$image}) no-repeat;
+  background-size: contain;
+  background-position: center;
 }
+
+@mixin margin-direction($direction) {
+  margin-#{$direction}: $margin-indent-home-nav;
+}
+
 .home-nav-item__about {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/about.svg) no-repeat;
-  background-size: contain;
-  margin-top: $margin-indent-home-nav;
+  @include background-style("about.svg");
+  @include margin-direction("top");
 }
 
 .home-nav-item__team {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/team.svg) no-repeat;
-  background-size: contain;
-  margin-top: $margin-indent-home-nav;
+  @include background-style("team.svg");
+  @include margin-direction("top");
 }
 
 .home-nav-item__services {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/services.svg) no-repeat;
-  background-size: contain;
-  margin-bottom: $margin-indent-home-nav;
+  @include background-style("services.svg");
+  @include margin-direction("bottom");
 }
 .home-nav-item__portfolio {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/portfolio.svg) no-repeat;
-  background-size: contain;
-  background-position: center;
-  margin-bottom: $margin-indent-home-nav;
+  @include background-style("portfolio.svg");
+  @include margin-direction("bottom");
 }
 .home-nav-item__blog {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/blog.svg) no-repeat;
-  background-size: contain;
-  margin-top: $margin-indent-home-nav;
+  @include background-style("blog.svg");
+  @include margin-direction("top");
 }
 
 .home-nav-item__contact {
   @include column-col(2);
-  background: url(../../src/assets/header/header_nav/contact.svg) no-repeat;
-  background-size: contain;
-  margin-top: $margin-indent-home-nav;
+  @include background-style("contact.svg");
+  @include margin-direction("top");
 }
 
 .home-nav-title {
   position: absolute;
-  color: $base-color;
   top: 123px /1100px * 100vh;
   left: 60px/ 1100px * 100vh;
+  color: $base-color;
 }
 
 .home-scroll-container {
@@ -166,17 +171,55 @@ header {
 
 .home-scroll {
   @include column-col(2);
-  background: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
-  background-size: contain;
-  padding-bottom: 109px/1100px*100vh;
   float: none;
+  padding-bottom: 109px /1100px * 100vh;
+  background: url(../../src/assets/header/header_scroller/scroller.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
 }
-/*
+
 #about {
-  height: 100%;
+  height: 1965px / 1100px * 100vh;
+
+}
+
+#about nav {
+  @include grid-container;
+}
+.about-logo {
+  @include column-col(2);
+  font-size: 30px / 1100px * 100vh;
+  .base-color {
+    color: $base-color-about-nav;
+  }
+}
+
+.about-menu {
+  @include column-col(7);
+  @include offsets-column(3);
+  padding-left: 0;
+  font-size: 18px / 1100px * 100vh;
+  
+}
+
+.about-menu-item {
+  @include list-style-none;
+  display: inline;
+  margin-right: 32px / 1100px * 1100vh;
+  a, a:hover {
+    text-decoration: none;
+  }
+  a {
+    color: $base-color-nav;
+  }
+
+  a:hover {
+    color: $second-color;
+  }
 }
 
 
+/*
 #team {
   height: 1765px;
 }
