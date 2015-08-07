@@ -1,0 +1,78 @@
+/* mixins and variables*/
+$font-stack: Helvetica, sans-serif;
+$font-size: 16px;
+$base-color: #FFFFFF;
+$second-color: #a93d8b;
+$max-width-grid-container: 1145px;
+$gutter: 32px / $max-width-grid-container * 100%;
+$second-color: #a93d8b;
+$base-color-about-nav: #676767;
+$base-color-nav: #765c5c;
+$margin-indent-home-nav: 185px / 1100px * 100vh;
+$max-width-grid-container: 1145px/1100px *100vh;
+$gutter: 32px / 1100px * 100vh;
+
+@mixin grid-container {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: $max-width-grid-container;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+@mixin clearfix {
+  &:before, &:after  {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin column-col($n) {
+  width: $n * ($max-width-grid-container + $gutter) / 12 - $gutter;
+  box-sizing: border-box;
+  float: left;
+  @include margin-right;
+}
+
+@mixin offsets-column($n) {
+  margin-left: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
+}
+
+@mixin margin-right {
+  margin-right: $gutter;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:only-of-type {
+    //margin: 0 auto;
+  }
+}
+
+@mixin zeroing-margin-pad {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list-style-none {
+  list-style: none;
+}
+
+@mixin background-image($image) {
+  background: url(../../src/assets/#{$image}) no-repeat;
+}
+
+@mixin background-style($image) {
+  @include background-image($image);
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin margin-direction($direction) {
+  margin-#{$direction}: $margin-indent-home-nav;
+}

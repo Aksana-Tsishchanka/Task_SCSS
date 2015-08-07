@@ -1,0 +1,77 @@
+/* style for section about */
+@import "mixins";
+
+#about {
+  height: 1965px / 1100px * 100vh;
+}
+
+#about nav {
+  @include grid-container;
+  margin-top: 57px / 1100px * 100vh;
+  margin-bottom: 44px / 1100px * 100vh;
+}
+.about-logo {
+  @include column-col(2);
+  font-size: 30px / 1100px * 100vh;
+  .base-color {
+    color: $base-color-about-nav;
+  }
+}
+
+.about-menu {
+  @include column-col(8);
+  @include offsets-column(2);
+  padding-left: 0;
+  font-size: 18px / 1100px * 100vh;
+}
+
+.about-menu-item {
+  @include list-style-none;
+  display: inline;
+  @include margin-right;
+
+  a, a:hover {
+    text-decoration: none;
+  }
+  a {
+    color: $base-color-nav;
+  }
+
+  a:hover {
+    color: $second-color;
+  }
+}
+
+.about-feature {
+  @include background-image("feature/feature-bg.svg");
+  background-size: cover;
+}
+
+.about-feature-container {
+  @include grid-container;
+}
+.about-feature-item {
+  @include column-col(3);
+  margin-top: 165px / 1100px * 100vh;
+  margin-bottom: 215px / 1100px * 100vh;
+
+  img {
+    max-width: 100%;
+  }
+
+  h4, .about-feature-item-description  {
+    color: $base-color-nav;
+  }
+
+  h4 {
+    font-size: 24px / 1100px * 100vh;
+  }
+
+  .about-feature-item-description {
+    font-size: 16px / 1100px * 100vh;
+  }
+
+}
+
+
+

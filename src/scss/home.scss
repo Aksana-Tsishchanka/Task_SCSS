@@ -1,0 +1,136 @@
+@import "mixins";
+
+body {
+  font: 100% $font-size $font-stack;
+}
+
+#home {
+  height: 100vh;
+  @include background-image("header/header_bg.png");
+  background-position: center;
+}
+
+#home header {
+  @include grid-container;
+  h1 {
+    @include zeroing-margin-pad;
+    padding-top: 85px / 1100px * 100vh;
+    padding-bottom: 80px / 1100px * 100vh;
+    font-size: 90px/1100px * 100vh;
+  }
+  h2 {
+    @include zeroing-margin-pad;
+    margin-bottom: 34px / 1100px * 100vh;
+    font-size: 48px / 1100px * 100vh;
+  }
+  h3 {
+    margin-bottom: 110px /1100px * 100vh;
+    font-size: 24px / 1100px * 100vh;
+  }
+}
+.base-color {
+  color: $base-color;
+}
+
+.second-color {
+  color: $second-color;
+}
+
+.home-nav {
+  @include grid-container;
+  font-size: 18px / 1100px * 100vh;
+  @include list-style-none;
+  @include zeroing-margin-pad;
+  @include clearfix;
+
+  &-item {
+    position:relative;
+    padding-bottom: $margin-indent-home-nav;
+    height: 0;
+  }
+}
+
+.home-nav-item__about {
+  @include column-col(2);
+  @include background-style("header/header_nav/about.svg");
+  @include margin-direction("top");
+}
+
+.home-nav-item__team {
+  @include column-col(2);
+  @include background-style("header/header_nav/team.svg");
+  @include margin-direction("top");
+}
+
+.home-nav-item__services {
+  @include column-col(2);
+  @include background-style("header/header_nav/services.svg");
+  @include margin-direction("bottom");
+}
+.home-nav-item__portfolio {
+  @include column-col(2);
+  @include background-style("header/header_nav/portfolio.svg");
+  @include margin-direction("bottom");
+}
+.home-nav-item__blog {
+  @include column-col(2);
+  @include background-style("header/header_nav/blog.svg");
+  @include margin-direction("top");
+}
+
+.home-nav-item__contact {
+  @include column-col(2);
+  @include background-style("header/header_nav/contact.svg");
+  @include margin-direction("top");
+}
+
+.home-nav-title {
+  position: absolute;
+  top: 123px /1100px * 100vh;
+  left: 60px/ 1100px * 100vh;
+  color: $base-color;
+}
+
+.home-scroll-container {
+
+}
+
+.home-scroll {
+  @include column-col(2);
+  @include offsets-column(6);
+  padding-bottom: 109px /1100px * 100vh;
+  @include background-image("header/header_scroller/scroller.svg");
+  background-size: contain;
+
+}
+
+/*
+#team {
+  height: 1765px;
+}
+
+#service {
+  height: 2310px;
+}
+#portfolio {
+  height: 1475px;
+}
+#contact {
+  height: 1325px;
+}
+
+
+section.feature{
+  height: 1.5%;
+  background-color: red;
+}
+section.about{
+  height: 8%;
+  background-color: #004444;
+}
+
+section.quote{
+  height: 10.5%;
+  background-color: #00DD00;
+}
+*/
