@@ -85,3 +85,55 @@
     font-size: 2.18182vh; }
   .about-feature-item .about-feature-item-description {
     font-size: 1.45455vh; }
+
+.about-section {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 104.09091vh;
+  margin: 0 auto; }
+  .about-section:before, .about-section:after {
+    content: " ";
+    display: table; }
+  .about-section:after {
+    clear: both; }
+
+.about-section-header {
+  background: url(../../src/assets/about/heading-about.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 32.75758vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  margin-left: 29.84848vh;
+  position: relative;
+  font-size: 4.36364vh;
+  padding-bottom: 10.90909vh;
+  margin-top: 11.36364vh;
+  margin-bottom: 11.81818vh; }
+  .about-section-header:last-child {
+    margin-right: 0; }
+
+.about-section-header__text {
+  position: absolute;
+  top: 25%;
+  left: 25%; }
+
+.about-body-devices {
+  width: 59.50758vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh; }
+  .about-body-devices:last-child {
+    margin-right: 0; }
+  .about-body-devices object {
+    max-width: 100%; }
+
+.about-body-info {
+  width: 41.67424vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh; }
+  .about-body-info:last-child {
+    margin-right: 0; }

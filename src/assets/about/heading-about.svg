@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="269.684" height="113.68" viewBox="0 0 269.684 113.68">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="269.7" height="113.7" viewBox="0 0 269.684 113.68">
   <defs>
     <style>
       .cls-1 {
@@ -8,7 +8,7 @@
     </style>
   </defs>
   <g>
-    <path d="M269.693,28.852 L268.693,28.852 L268.693,1.006 L240.847,1.006 L240.847,0.006 L269.193,0.006 L269.193,0.506 L269.693,0.506 L269.693,28.852 Z" class="cls-1"/>
-    <path d="M28.841,113.673 L0.494,113.673 L0.494,113.173 L-0.006,113.173 L-0.006,84.827 L0.994,84.827 L0.994,112.673 L28.841,112.673 L28.841,113.673 Z" class="cls-1"/>
+    <path d="M269.693 28.9 L268.693 28.9 L268.693 1 L240.847 1 L240.847 0 L269.193 0 L269.193 0.5 L269.693 0.5 L269.693 28.9 Z" class="cls-1"/>
+    <path d="M28.841 113.7 L0.494 113.7 L0.494 113.2 L-0.006 113.2 L-0.006 84.8 L0.994 84.8 L0.994 112.7 L28.841 112.7 L28.841 113.7 Z" class="cls-1"/>
   </g>
 </svg>
