@@ -5,12 +5,12 @@ $base-color: #FFFFFF;
 $second-color: #a93d8b;
 $max-width-grid-container: 1145px;
 $gutter: 32px / $max-width-grid-container * 100%;
-$second-color: #a93d8b;
 $base-color-about-nav: #676767;
 $base-color-nav: #765c5c;
 $margin-indent-home-nav: 185px / 1100px * 100vh;
 $max-width-grid-container: 1145px/1100px *100vh;
 $gutter: 32px / 1100px * 100vh;
+$font-color-about: #79447b;
 
 @mixin grid-container {
   width: 100%;

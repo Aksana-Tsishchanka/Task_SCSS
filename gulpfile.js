@@ -19,6 +19,7 @@ gulp.task('serve', ['combine-css'], function() {
 
     gulp.watch("src/scss/*.scss", ['combine-css']).on('change', browserSync.reload);
     gulp.watch("index.html").on('change', browserSync.reload);
+    gulp.watch("src/assets/*/*.*").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers

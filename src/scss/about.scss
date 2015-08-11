@@ -1,6 +1,22 @@
 /* style for section about */
 @import "mixins";
 
+svg:hover .feature-cls-1, svg:hover .feature-cls-2 {
+  stroke: #a93d8b;
+  fill-opacity: 1;
+}
+
+svg:hover .feature-cls-2 {
+  fill: #a93d8b;
+}
+
+svg:hover .about__button-cls-2 {
+  fill: #562081;
+}
+svg:hover .about__button-cls-1 {
+  fill: #9f449b;
+}
+
 #about {
   height: 1965px / 1100px * 100vh;
 }
@@ -55,7 +71,7 @@
   margin-top: 165px / 1100px * 100vh;
   margin-bottom: 215px / 1100px * 100vh;
 
-  img {
+  img, object {
     max-width: 100%;
   }
 
@@ -75,6 +91,8 @@
 
 .about-section {
   @include grid-container;
+  padding-top: 125px / 1100px * 100vh;
+  padding-bottom: 234px / 1100px * 100vh;
 }
 .about-section-header {
   @include background-style("about/heading-about.svg");
@@ -83,7 +101,6 @@
   position: relative;
   font-size: 48px / 1100px * 100vh;
   padding-bottom: 120px / 1100px * 100vh;
-  margin-top: 125px / 1100px * 100vh;
   margin-bottom: 130px / 1100px * 100vh ;
 }
 
@@ -91,6 +108,7 @@
   position: absolute;
   top: 25%;
   left: 25%;
+  color: $font-color-about;
 }
 
 .about-body {
@@ -100,13 +118,61 @@
 .about-body-devices {
   @include column-col(7);
  //@include background-style("about/devices.svg");
-  object {
+  object, img {
     max-width: 100%;
   }
 }
 
 .about-body-info {
   @include column-col(5);
+
+  .info-text {
+    text-align: left;
+    margin-bottom: 130px / 1100px * 100vh;
+    color: $base-color-nav;
+    font-size: 16px / 1100px * 100vh;
+    line-height: (16px + 36px/ 2) /1100px * 100vh;
+  }
+  .info-button {
+    @include background-image("about/button.svg");
+    background-size: contain;
+    padding-bottom: 80px / 1100px * 100vh;
+    position: relative;
+
+    &:after {
+      content: "Learn more";
+      position: absolute;
+      top: 35%;
+      left: 15%;
+      font-size: 20px / 1100px * 100vh;
+      color: #fff;
+    }
+  }
 }
+
+.quote-section {
+  @include background-image("quote/quote-bg.png");
+  background-size: 100% auto;
+}
+
+.quote-container {
+  @include grid-container;
+}
+
+.quote-study-icon {
+  @include offsets-column(5);
+  @include column-col(2);
+  margin-top: 154px/ 1100px * 100vh;;
+}
+
+.quote-study-text {
+  @include offsets-column(2);
+  @include column-col(8);
+  font-size: 48px / 1100px * 100vh;
+  color: $base-color;
+  margin-top: 64px / 1100px * 100vh;
+  margin-bottom: 181px / 1100px * 100vh;
+}
+
 
 
