@@ -1,0 +1,24 @@
+@import "mixins";
+@import "about.scss";
+
+
+#team {
+    @include grid-container;
+    padding-top: 150px / 1100px * 100vh;
+    padding-bottom: 200px / 1100px * 100vh;
+}
+
+.team-header {
+    @extend .about-section-header;
+}
+
+.team-header__text {
+    @extend .about-section-header__text;
+    left: 20%;
+}
+
+.team-arrow {
+    @include column-col(2);
+    @include offsets-column(5);
+    padding-bottom: 116px / 1100px * 100vh;
+}

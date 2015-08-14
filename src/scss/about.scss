@@ -1,12 +1,12 @@
 /* style for section about */
 @import "mixins";
 
-svg:hover .feature-cls-1, svg:hover .feature-cls-2 {
+svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2 {
   stroke: #a93d8b;
   fill-opacity: 1;
 }
 
-svg:hover .feature-cls-2 {
+svg:hover .feature-cls-2, svg:hover .quote-cls-2 {
   fill: #a93d8b;
 }
 
@@ -71,10 +71,6 @@ svg:hover .about__button-cls-1 {
   margin-top: 165px / 1100px * 100vh;
   margin-bottom: 215px / 1100px * 100vh;
 
-  img, object {
-    max-width: 100%;
-  }
-
   h4, .about-feature-item-description  {
     color: $base-color-nav;
   }
@@ -85,6 +81,7 @@ svg:hover .about__button-cls-1 {
 
   .about-feature-item-description {
     font-size: 16px / 1100px * 100vh;
+    line-height: (16px + 30px/2) / 16px;
   }
 
 }
@@ -131,7 +128,7 @@ svg:hover .about__button-cls-1 {
     margin-bottom: 130px / 1100px * 100vh;
     color: $base-color-nav;
     font-size: 16px / 1100px * 100vh;
-    line-height: (16px + 36px/ 2) /1100px * 100vh;
+    line-height: (16px + 36px/ 2) / 16px;
   }
   .info-button {
     @include background-image("about/button.svg");
@@ -152,7 +149,7 @@ svg:hover .about__button-cls-1 {
 
 .quote-section {
   @include background-image("quote/quote-bg.png");
-  background-size: 100% auto;
+  background-size: 100%;
 }
 
 .quote-container {

@@ -4,6 +4,10 @@ body {
   font: 100% $font-size $font-stack;
 }
 
+img, object {
+  max-width: 100%;
+}
+
 #home {
   height: 100vh;
   @include background-image("header/header_bg.png");
@@ -14,18 +18,18 @@ body {
   @include grid-container;
   h1 {
     @include zeroing-margin-pad;
-    padding-top: 85px / 1100px * 100vh;
-    padding-bottom: 80px / 1100px * 100vh;
-    font-size: 90px/1100px * 100vh;
+    padding-top: 85px / $viewport-height * 100vh;
+    padding-bottom: 80px / $viewport-height * 100vh;
+    font-size: 90px/$viewport-height * 100vh;
   }
   h2 {
     @include zeroing-margin-pad;
-    margin-bottom: 34px / 1100px * 100vh;
-    font-size: 48px / 1100px * 100vh;
+    margin-bottom: 34px / $viewport-height * 100vh;
+    font-size: 48px / $viewport-height * 100vh;
   }
   h3 {
-    margin-bottom: 110px /1100px * 100vh;
-    font-size: 24px / 1100px * 100vh;
+    margin-bottom: 110px /$viewport-height * 100vh;
+    font-size: 24px / $viewport-height * 100vh;
   }
 }
 .base-color {
@@ -38,7 +42,7 @@ body {
 
 .home-nav {
   @include grid-container;
-  font-size: 18px / 1100px * 100vh;
+  font-size: 18px / $viewport-height * 100vh;
   @include list-style-none;
   @include zeroing-margin-pad;
   @include clearfix;
@@ -86,8 +90,8 @@ body {
 
 .home-nav-title {
   position: absolute;
-  top: 123px /1100px * 100vh;
-  left: 60px/ 1100px * 100vh;
+  top: 123px /$viewport-height * 100vh;
+  left: 60px/ $viewport-height * 100vh;
   color: $base-color;
 }
 
@@ -98,7 +102,7 @@ body {
 .home-scroll {
   @include column-col(2);
   @include offsets-column(6);
-  padding-bottom: 109px /1100px * 100vh;
+  padding-bottom: 109px /$viewport-height * 100vh;
   @include background-image("header/header_scroller/scroller.svg");
   background-size: contain;
 

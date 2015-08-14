@@ -2,6 +2,9 @@
 body {
   font: 100% 16px Helvetica, sans-serif; }
 
+img, object {
+  max-width: 100%; }
+
 #home {
   height: 100vh;
   background: url(../../src/assets/header/header_bg.png) no-repeat;
