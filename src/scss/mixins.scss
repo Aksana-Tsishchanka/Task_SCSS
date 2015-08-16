@@ -44,6 +44,11 @@ $font-color-about: #79447b;
   margin-left: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
 }
 
+@mixin offsets-column-r($n) {
+  margin-right: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
+}
+
+
 @mixin margin-right {
   margin-right: $gutter;
 

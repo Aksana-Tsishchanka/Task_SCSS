@@ -18,7 +18,38 @@
 }
 
 .team-arrow {
+
+}
+
+.team-arrow-container {
     @include column-col(2);
     @include offsets-column(5);
-    padding-bottom: 116px / 1100px * 100vh;
+    @include offsets-column-r(5);
+    @include background-style("team/arrow.png");
+    padding-bottom: 90px / 1100px * 100vh;
+    margin-bottom: 115px / 1100px * 100vh;
+    
+}
+
+.team-player-panel {
+
+}
+
+.team-player {
+    @include column-col(4);
+    //position: relative;
+}
+
+.team-player-photo {
+    @include background-image("team/photo.png");
+    background-size: contain;
+    padding-bottom: 245px / $viewport-height * 100vh;
+
+}
+
+.team-player-name {
+    text-align: center;
+    font-size: 24px / $viewport-height * 100vh;
+    padding-top: 65px / $viewport-height * 100vh;
+    padding-left: 2vh;
 }

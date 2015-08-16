@@ -86,7 +86,7 @@ svg:hover .about__button-cls-1 {
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
-  margin-top: 15vh;
+  margfin-top: 15vh;
   margin-bottom: 19.54545vh; }
   .about-feature-item:last-child {
     margin-right: 0; }
@@ -204,7 +204,7 @@ svg:hover .about__button-cls-1 {
   margin-right: 2.90909vh;
   font-size: 4.36364vh;
   color: #FFFFFF;
-  margin-top: 5.81818vh;
-  margin-bottom: 16.45455vh; }
+  padding-top: 5.81818vh;
+  padding-bottom: 16.45455vh; }
   .quote-study-text:last-child {
     margin-right: 0; }

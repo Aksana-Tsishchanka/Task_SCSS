@@ -87,7 +87,7 @@ svg:hover .about__button-cls-1 {
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
-  margin-top: 15vh;
+  margfin-top: 15vh;
   margin-bottom: 19.54545vh; }
   .about-feature-item:last-child {
     margin-right: 0; }
@@ -205,8 +205,8 @@ svg:hover .about__button-cls-1 {
   margin-right: 2.90909vh;
   font-size: 4.36364vh;
   color: #FFFFFF;
-  margin-top: 5.81818vh;
-  margin-bottom: 16.45455vh; }
+  padding-top: 5.81818vh;
+  padding-bottom: 16.45455vh; }
   .quote-study-text:last-child {
     margin-right: 0; }
 
@@ -227,12 +227,36 @@ svg:hover .about__button-cls-1 {
 .team-header__text {
   left: 20%; }
 
-.team-arrow {
+.team-arrow-container {
   width: 14.92424vh;
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
   margin-left: 38.76515vh;
-  padding-bottom: 10.54545vh; }
-  .team-arrow:last-child {
+  margin-right: 38.76515vh;
+  background: url(../../src/assets/team/arrow.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-bottom: 8.18182vh;
+  margin-bottom: 10.45455vh; }
+  .team-arrow-container:last-child {
     margin-right: 0; }
+
+.team-player {
+  width: 32.75758vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh; }
+  .team-player:last-child {
+    margin-right: 0; }
+
+.team-player-photo {
+  background: url(../../src/assets/team/photo.png) no-repeat;
+  background-size: contain;
+  padding-bottom: 22.27273vh; }
+
+.team-player-name {
+  text-align: center;
+  font-size: 2.18182vh;
+  padding-top: 5.90909vh;
+  padding-left: 2vh; }

@@ -68,7 +68,7 @@ svg:hover .about__button-cls-1 {
 }
 .about-feature-item {
   @include column-col(3);
-  margin-top: 165px / 1100px * 100vh;
+  margfin-top: 165px / 1100px * 100vh;
   margin-bottom: 215px / 1100px * 100vh;
 
   h4, .about-feature-item-description  {
@@ -167,8 +167,8 @@ svg:hover .about__button-cls-1 {
   @include column-col(8);
   font-size: 48px / 1100px * 100vh;
   color: $base-color;
-  margin-top: 64px / 1100px * 100vh;
-  margin-bottom: 181px / 1100px * 100vh;
+  padding-top: 64px / 1100px * 100vh;
+  padding-bottom: 181px / 1100px * 100vh;
 }
 
 
