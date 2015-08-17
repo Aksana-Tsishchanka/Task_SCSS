@@ -1,4 +1,15 @@
 @import "mixins";
+@import "team";
+
+.skill-section {
+  @include grid-container;
+  padding-bottom: 195px / $viewport-height * 100vh;
+}
+
+.skill-header {
+  @extend .about-section-header;
+}
+
 
 .statistic-section-bg {
   background-color: $statistic-bg-color;
@@ -6,11 +17,23 @@
 
 .statistic-section {
   @include grid-container;
+  padding-top: 160px / $viewport-height * 100vh;
+  padding-bottom: 95px / $viewport-height * 100vh;
 }
 
 .statistic-index {
   div {
-    @include grid-container;
     @include column-col(3);
+    font-size: 64px / $viewport-height * 100vh;
+
+    &::after {
+      content: "Lorem ipsum";
+      font-size: 16px / $viewport-height * 100vh;
+      display: block;
+    }
   }
+}
+
+.skill-header__text {
+  @extend .about-section-header__text;
 }
