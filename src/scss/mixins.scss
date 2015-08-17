@@ -12,6 +12,7 @@ $margin-indent-home-nav: 185px / $viewport-height * 100vh;
 $max-width-grid-container: 1145px/$viewport-height *100vh;
 $gutter: 32px / $viewport-height * 100vh;
 $font-color-about: #79447b;
+$statistic-bg-color: #eeeeee;
 
 
 @mixin grid-container {
@@ -43,11 +44,6 @@ $font-color-about: #79447b;
 @mixin offsets-column($n) {
   margin-left: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
 }
-
-@mixin offsets-column-r($n) {
-  margin-right: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
-}
-
 
 @mixin margin-right {
   margin-right: $gutter;

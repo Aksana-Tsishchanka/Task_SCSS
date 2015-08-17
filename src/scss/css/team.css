@@ -14,9 +14,6 @@ svg:hover .about__button-cls-2 {
 svg:hover .about__button-cls-1 {
   fill: #9f449b; }
 
-#about {
-  height: 178.63636vh; }
-
 #about nav {
   width: 100%;
   text-align: center;
@@ -36,7 +33,8 @@ svg:hover .about__button-cls-1 {
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
-  font-size: 2.72727vh; }
+  font-size: 2.72727vh;
+  line-height: 1; }
   .about-logo:last-child {
     margin-right: 0; }
   .about-logo .base-color {
@@ -48,8 +46,11 @@ svg:hover .about__button-cls-1 {
   float: left;
   margin-right: 2.90909vh;
   margin-left: 12.01515vh;
-  padding-left: 0;
-  font-size: 1.63636vh; }
+  margin: 0;
+  padding: 0;
+  line-height: 1.83333;
+  font-size: 1.63636vh;
+  float: right; }
   .about-menu:last-child {
     margin-right: 0; }
 
@@ -171,33 +172,33 @@ svg:hover .about__button-cls-1 {
       font-size: 1.81818vh;
       color: #fff; }
 
-.quote-section {
+.quote-section, .service-section {
   background: url(../../src/assets/quote/quote-bg.png) no-repeat;
-  background-size: 100%; }
+  background-position: center; }
 
-.quote-container {
+.quote-container, .service-container {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
   max-width: 104.09091vh;
   margin: 0 auto; }
-  .quote-container:before, .quote-container:after {
+  .quote-container:before, .service-container:before, .quote-container:after, .service-container:after {
     content: " ";
     display: table; }
-  .quote-container:after {
+  .quote-container:after, .service-container:after {
     clear: both; }
 
-.quote-study-icon {
+.quote-study-icon, .service-icon {
   margin-left: 38.76515vh;
   width: 14.92424vh;
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
   margin-top: 14vh; }
-  .quote-study-icon:last-child {
+  .quote-study-icon:last-child, .service-icon:last-child {
     margin-right: 0; }
 
-.quote-study-text {
+.quote-study-text, .service-text {
   margin-left: 12.01515vh;
   width: 68.42424vh;
   box-sizing: border-box;
@@ -207,7 +208,7 @@ svg:hover .about__button-cls-1 {
   color: #FFFFFF;
   padding-top: 5.81818vh;
   padding-bottom: 16.45455vh; }
-  .quote-study-text:last-child {
+  .quote-study-text:last-child, .service-text:last-child {
     margin-right: 0; }
 
 #team {
@@ -227,13 +228,19 @@ svg:hover .about__button-cls-1 {
 .team-header__text {
   left: 20%; }
 
+.team-arrow:before, .team-arrow:after {
+  content: " ";
+  display: table; }
+
+.team-arrow:after {
+  clear: both; }
+
 .team-arrow-container {
   width: 14.92424vh;
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
   margin-left: 38.76515vh;
-  margin-right: 38.76515vh;
   background: url(../../src/assets/team/arrow.png) no-repeat;
   background-size: contain;
   background-position: center;
@@ -241,6 +248,9 @@ svg:hover .about__button-cls-1 {
   margin-bottom: 10.45455vh; }
   .team-arrow-container:last-child {
     margin-right: 0; }
+
+.team-player-panel {
+  color: #676767; }
 
 .team-player {
   width: 32.75758vh;
@@ -256,7 +266,37 @@ svg:hover .about__button-cls-1 {
   padding-bottom: 22.27273vh; }
 
 .team-player-name {
-  text-align: center;
+  text-align: left;
   font-size: 2.18182vh;
   padding-top: 5.90909vh;
   padding-left: 2vh; }
+
+.team-player-title {
+  text-align: left;
+  font-size: 1.63636vh;
+  padding-left: 3vh;
+  padding-top: 1.36364vh;
+  padding-bottom: 2vh; }
+
+.social-icons:before, .social-icons:after {
+  content: " ";
+  display: table; }
+
+.social-icons:after {
+  clear: both; }
+
+.social-icons .social-icon {
+  padding-bottom: 6.36364vh;
+  width: 25%;
+  float: left;
+  padding-left: 3vh; }
+
+.icon__facebook {
+  background: url(../../src/assets/team/icon_facebook.png) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.icon__google {
+  background: url(../../src/assets/team/icon_google.png) no-repeat;
+  background-size: contain;
+  background-position: center; }

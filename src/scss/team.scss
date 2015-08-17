@@ -5,7 +5,7 @@
 #team {
     @include grid-container;
     padding-top: 150px / 1100px * 100vh;
-    padding-bottom: 200px / 1100px * 100vh;
+    padding-bottom: 18.18182vh;
 }
 
 .team-header {
@@ -18,21 +18,19 @@
 }
 
 .team-arrow {
-
+    @include clearfix;
 }
 
 .team-arrow-container {
     @include column-col(2);
     @include offsets-column(5);
-    @include offsets-column-r(5);
     @include background-style("team/arrow.png");
     padding-bottom: 90px / 1100px * 100vh;
     margin-bottom: 115px / 1100px * 100vh;
-    
 }
 
 .team-player-panel {
-
+    color: $base-color-about-nav;
 }
 
 .team-player {
@@ -48,8 +46,37 @@
 }
 
 .team-player-name {
-    text-align: center;
+    text-align: left;
     font-size: 24px / $viewport-height * 100vh;
     padding-top: 65px / $viewport-height * 100vh;
     padding-left: 2vh;
 }
+
+.team-player-title {
+    text-align: left;
+    font-size: 18px / $viewport-height * 100vh;
+    padding-left: 3vh;
+    padding-top: 15px / $viewport-height * 100vh;
+    padding-bottom: 22px / $viewport-height * 100vh;
+}
+
+.social-icons {
+    @include clearfix;
+
+    .social-icon {
+        padding-bottom: 70px / $viewport-height * 100vh;
+        width:25%;
+        float: left;
+        padding-left: 3vh;
+    }
+}
+
+.icon__facebook {
+    @include background-style("team/icon_facebook.png");
+
+}
+.icon__google {
+    @include background-style("team/icon_google.png");
+}
+
+

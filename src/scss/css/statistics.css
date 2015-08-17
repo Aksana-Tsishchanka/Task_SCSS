@@ -1,0 +1,33 @@
+/* mixins and variables*/
+.statistic-section-bg {
+  background-color: #eeeeee; }
+
+.statistic-section {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 104.09091vh;
+  margin: 0 auto; }
+  .statistic-section:before, .statistic-section:after {
+    content: " ";
+    display: table; }
+  .statistic-section:after {
+    clear: both; }
+
+.statistic-index div {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 104.09091vh;
+  margin: 0 auto;
+  width: 23.84091vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh; }
+  .statistic-index div:before, .statistic-index div:after {
+    content: " ";
+    display: table; }
+  .statistic-index div:after {
+    clear: both; }
+  .statistic-index div:last-child {
+    margin-right: 0; }

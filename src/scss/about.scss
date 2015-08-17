@@ -17,10 +17,6 @@ svg:hover .about__button-cls-1 {
   fill: #9f449b;
 }
 
-#about {
-  height: 1965px / 1100px * 100vh;
-}
-
 #about nav {
   @include grid-container;
   margin-top: 57px / 1100px * 100vh;
@@ -29,6 +25,7 @@ svg:hover .about__button-cls-1 {
 .about-logo {
   @include column-col(2);
   font-size: 30px / 1100px * 100vh;
+  line-height: 1;
   .base-color {
     color: $base-color-about-nav;
   }
@@ -37,8 +34,10 @@ svg:hover .about__button-cls-1 {
 .about-menu {
   @include column-col(8);
   @include offsets-column(2);
-  padding-left: 0;
+  @include zeroing-margin-pad;
+  line-height: (18px + 30px/2) / 18px ;
   font-size: 18px / 1100px * 100vh;
+  float: right;
 }
 
 .about-menu-item {
@@ -149,7 +148,7 @@ svg:hover .about__button-cls-1 {
 
 .quote-section {
   @include background-image("quote/quote-bg.png");
-  background-size: 100%;
+  background-position: center;
 }
 
 .quote-container {
@@ -170,6 +169,23 @@ svg:hover .about__button-cls-1 {
   padding-top: 64px / 1100px * 100vh;
   padding-bottom: 181px / 1100px * 100vh;
 }
+
+.service-section {
+  @extend .quote-section;
+}
+
+.service-container {
+  @extend .quote-container;
+}
+
+.service-icon {
+  @extend .quote-study-icon;
+}
+
+.service-text {
+  @extend .quote-study-text;
+}
+
 
 
 
