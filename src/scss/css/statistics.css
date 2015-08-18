@@ -2,11 +2,11 @@
 /* mixins and variables*/
 /* style for section about */
 /* mixins and variables*/
-svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2 {
+svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2, svg:hover .think-cls-1, svg:hover .think-cls-2 {
   stroke: #a93d8b;
   fill-opacity: 1; }
 
-svg:hover .feature-cls-2, svg:hover .quote-cls-2 {
+svg:hover .feature-cls-2, svg:hover .quote-cls-2, svg:hover .think-cls-2 {
   fill: #a93d8b; }
 
 svg:hover .about__button-cls-2 {
@@ -332,15 +332,135 @@ svg:hover .about__button-cls-1 {
   .statistic-section:after {
     clear: both; }
 
-.statistic-index div {
-  width: 23.84091vh;
+.statistic-index {
+  margin-bottom: 12.72727vh; }
+  .statistic-index div {
+    width: 23.84091vh;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 2.90909vh;
+    font-size: 5.81818vh; }
+    .statistic-index div:last-child {
+      margin-right: 0; }
+    .statistic-index div::after {
+      content: "Lorem ipsum";
+      font-size: 1.45455vh;
+      color: #676767;
+      display: block; }
+
+.statistic-player {
+  color: #676767; }
+
+.statistic-player-photo {
+  margin-left: 38.76515vh;
+  width: 14.92424vh;
   box-sizing: border-box;
   float: left;
   margin-right: 2.90909vh;
-  font-size: 5.81818vh; }
-  .statistic-index div:last-child {
+  background: url(../../src/assets/team/photo.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-bottom: 16.81818vh; }
+  .statistic-player-photo:last-child {
     margin-right: 0; }
-  .statistic-index div::after {
-    content: "Lorem ipsum";
-    font-size: 1.45455vh;
-    display: block; }
+  .statistic-player-photo:nth-child(n) {
+    margin-right: 0; }
+
+.statistic-player-citation {
+  margin-left: 3.09848vh;
+  width: 86.25758vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  font-size: 3vh;
+  line-height: 39.6px;
+  padding-bottom: 2.72727vh; }
+  .statistic-player-citation:last-child {
+    margin-right: 0; }
+
+.statistic-player-name {
+  font-size: 1.81818vh;
+  margin-left: 29.84848vh;
+  width: 32.75758vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  padding-bottom: 4.54545vh; }
+  .statistic-player-name:last-child {
+    margin-right: 0; }
+
+.statistic-nav {
+  margin-left: 38.76515vh;
+  width: 14.92424vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  background: url(../../src/assets/statistic/ellipse-nav.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-repeat: space;
+  padding-bottom: 1.81818vh; }
+  .statistic-nav:last-child {
+    margin-right: 0; }
+
+.experience__web-d, .experience__html-css {
+  margin-left: 3.09848vh;
+  width: 41.67424vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  padding-bottom: 3.63636vh; }
+  .experience__web-d:last-child, .experience__html-css:last-child {
+    margin-right: 0; }
+
+.experience-web-d__bg {
+  background: url(../../src/assets/skills/web-design.svg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.experience__graphic-d, .experience__ui-ux {
+  width: 41.67424vh;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2.90909vh;
+  margin-left: 3.09848vh;
+  padding-bottom: 3.63636vh; }
+  .experience__graphic-d:last-child, .experience__ui-ux:last-child {
+    margin-right: 0; }
+  .experience__graphic-d:nth-child(n), .experience__ui-ux:nth-child(n) {
+    margin-right: 0; }
+
+.experiense-text:before, .experiense-text:after {
+  content: " ";
+  display: table; }
+
+.experiense-text:after {
+  clear: both; }
+
+.experiense-text__title {
+  font-size: 2vh;
+  float: left;
+  line-height: 1.40909; }
+
+.experience-text__percent {
+  float: right;
+  font-size: 2.18182vh;
+  line-height: 1.375; }
+
+.experience-graphic-d__bg {
+  background: url(../../src/assets/skills/graphic-design.svg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.experience-line-bg {
+  padding-bottom: 3.63636vh; }
+
+.experience-html-css__bg {
+  background: url(../../src/assets/skills/html-css.svg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.experience-ui-ux__bg {
+  background: url(../../src/assets/skills/ui-ux.svg) no-repeat;
+  background-size: contain;
+  background-position: center; }

@@ -57,6 +57,12 @@ $statistic-bg-color: #eeeeee;
   }
 }
 
+@mixin omega($n) {
+  &:nth-child(n) {
+    margin-right: 0;
+  }
+}
+
 @mixin zeroing-margin-pad {
   margin: 0;
   padding: 0;

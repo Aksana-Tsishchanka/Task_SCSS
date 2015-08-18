@@ -22,6 +22,7 @@
 }
 
 .statistic-index {
+  margin-bottom: 140px / $viewport-height * 100vh;
   div {
     @include column-col(3);
     font-size: 64px / $viewport-height * 100vh;
@@ -29,11 +30,104 @@
     &::after {
       content: "Lorem ipsum";
       font-size: 16px / $viewport-height * 100vh;
+      color: $base-color-about-nav;
       display: block;
     }
   }
 }
+.statistic-player {
+  color: $base-color-about-nav;
+}
+
+.statistic-player-photo {
+  @include offsets-column(5);
+  @include column-col(2);
+  @include omega(1);
+  @include background-style("team/photo.png");
+  padding-bottom: 185px / $viewport-height * 100vh;
+
+}
+
+.statistic-player-citation {
+  @include offsets-column(1);
+  @include column-col(10);
+  font-size: 33px / $viewport-height * 100vh;
+  line-height: 33px * 120% / 100%;
+  padding-bottom: 30px / $viewport-height * 100vh;
+}
+
+.statistic-player-name {
+  font-size: 20px / $viewport-height * 100vh;
+  @include offsets-column(4);
+  @include column-col(4);
+  padding-bottom: 50px / $viewport-height * 100vh;
+}
+
+.statistic-nav {
+  @include offsets-column(5);
+  @include column-col(2);
+  @include background-style("statistic/ellipse-nav.svg");
+  background-repeat: space;
+  padding-bottom: 20px / $viewport-height * 100vh;
+}
 
 .skill-header__text {
   @extend .about-section-header__text;
+}
+
+.experience__web-d {
+  @include offsets-column(1);
+  @include column-col(5);
+  padding-bottom: 40px / $viewport-height * 100vh;
+}
+
+.experience-web-d__bg {
+  @include background-style("skills/web-design.svg");
+
+}
+
+.experience__graphic-d {
+  @include column-col(5);
+  @include omega(2);
+  @include offsets-column(1);
+  padding-bottom: 40px / $viewport-height * 100vh;
+}
+.experiense-text {
+  @include clearfix;
+}
+
+.experiense-text__title {
+  font-size: 22px / $viewport-height * 100vh;
+  float: left;
+  line-height: (22px + 18px / 2) / 22px;
+}
+
+.experience-text__percent {
+  float: right;
+  font-size: 24px / $viewport-height * 100vh;
+  line-height: (24px + 18px / 2) / 24px;
+}
+
+.experience-graphic-d__bg {
+  @include background-style("skills/graphic-design.svg");
+}
+
+.experience-line-bg {
+  padding-bottom: 40px / $viewport-height * 100vh;
+}
+
+.experience__html-css {
+  @extend .experience__web-d;
+}
+
+.experience-html-css__bg {
+  @include background-style("skills/html-css.svg");
+}
+
+.experience__ui-ux {
+  @extend .experience__graphic-d;
+}
+
+.experience-ui-ux__bg {
+  @include background-style("skills/ui-ux.svg");
 }

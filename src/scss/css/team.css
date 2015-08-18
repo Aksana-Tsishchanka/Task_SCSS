@@ -1,11 +1,11 @@
 /* mixins and variables*/
 /* style for section about */
 /* mixins and variables*/
-svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2 {
+svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2, svg:hover .think-cls-1, svg:hover .think-cls-2 {
   stroke: #a93d8b;
   fill-opacity: 1; }
 
-svg:hover .feature-cls-2, svg:hover .quote-cls-2 {
+svg:hover .feature-cls-2, svg:hover .quote-cls-2, svg:hover .think-cls-2 {
   fill: #a93d8b; }
 
 svg:hover .about__button-cls-2 {
