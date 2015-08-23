@@ -58,8 +58,9 @@ svg:hover .about__button-cls-1 {
 }
 
 .about-feature {
-  @include background-image("feature/feature-bg.svg");
-  background-size: cover;
+  background-color: $statistic-bg-color;  
+  padding-top: 165px/ $viewport-height * 100vh;
+  padding-bottom: 215px / 1100px * 100vh;
 }
 
 .about-feature-container {
@@ -67,8 +68,6 @@ svg:hover .about__button-cls-1 {
 }
 .about-feature-item {
   @include column-col(3);
-  margfin-top: 165px / 1100px * 100vh;
-  margin-bottom: 215px / 1100px * 100vh;
 
   h4, .about-feature-item-description  {
     color: $base-color-nav;

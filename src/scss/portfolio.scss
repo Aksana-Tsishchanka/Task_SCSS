@@ -1,0 +1,17 @@
+@import "mixins";
+@import "about";
+
+.portfolio {
+    @include grid-container;
+}
+.portfolio-header {
+    @extend .about-section-header;
+    @include offsets-column(4);
+    @include column-col(5);
+    padding-bottom: 160px / $viewport-height * 100vh;
+}
+
+.portfolio-header__text {
+    @extend .about-section-header__text;
+    font-size: 48px / $viewport-height * 100vh;
+}
