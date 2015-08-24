@@ -13,7 +13,8 @@ $max-width-grid-container: 1145px/$viewport-height * 100vh;
 $gutter: 32px / $viewport-height * 100vh;
 $font-color-about: #79447b;
 $statistic-bg-color: #eeeeee;
-
+$font-after: #907676;
+$portfolio-color-font: black;
 
 @mixin grid-container {
   width: 100%;
@@ -58,7 +59,7 @@ $statistic-bg-color: #eeeeee;
 }
 
 @mixin omega($n) {
-  &:nth-child(n) {
+  &:nth-child(#{$n}) {
     margin-right: 0;
   }
 }

@@ -3,6 +3,8 @@
 
 .portfolio {
     @include grid-container;
+    padding-top: 98px / $viewport-height * 100vh;
+
 }
 .portfolio-header {
     @extend .about-section-header;
@@ -15,3 +17,68 @@
     @extend .about-section-header__text;
     font-size: 48px / $viewport-height * 100vh;
 }
+
+.portfolio-nav {
+    @include offsets-column(4);
+    @include column-col(5);
+    margin-bottom: 60px / $viewport-height * 100vh ;
+}
+
+.portfolio-nav-item {
+    width: 85px / $viewport-height * 100vh;
+    height: 40px / $viewport-height * 100vh;
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 20px / $viewport-height * 100vh;
+    font-size: 18px / $viewport-height * 100vh;
+    //line-height: (18px + 19.5/2 ) / 18px;
+    line-height: 40px / $viewport-height * 100vh;
+    border-radius: 6px;
+    @include omega(4);
+    @include clearfix;
+}
+
+.portfolio-nav-item:hover {
+    border-color: $second-color;
+    background-color: $second-color;
+    color: $base-color;
+}
+
+.portfolio-container-image {
+    @include clearfix;
+}
+
+.portfolio-image-item {
+    @include column-col(4);
+    @include omega(3);
+}
+.portfolio-image-item__text {
+    font-size: 24px / $viewport-height * 100vh;
+    color: $portfolio-color-font;
+    line-height: (24px + 27px / 2) / 27px;
+}
+.portfolio-image-item__text:after {
+    content: "apps, icons, ui";
+    display: block;
+    font-size: 17px / $viewport-height * 100vh;
+    color: $font-after;
+    line-height: (17px + 27px / 2) / 17px;
+}
+
+.portfolio-button {
+    @include grid-container;
+    @include background-image("about/button.svg");
+    background-size: contain;
+    padding-bottom: 80px / 1100px * 100vh;
+    position: relative;
+
+    &:after {
+        content: "Watch more";
+        position: absolute;
+        top: 35%;
+        left: 6%;
+        font-size: 20px / 1100px * 100vh;
+        color: #fff;
+    }
+}
+
