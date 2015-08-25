@@ -8,34 +8,34 @@
 }
 .portfolio-header {
     @extend .about-section-header;
-    @include offsets-column(4);
-    @include column-col(5);
     padding-bottom: 160px / $viewport-height * 100vh;
 }
 
 .portfolio-header__text {
     @extend .about-section-header__text;
     font-size: 48px / $viewport-height * 100vh;
+    left: 15%;
 }
 
 .portfolio-nav {
     @include offsets-column(4);
     @include column-col(5);
-    margin-bottom: 60px / $viewport-height * 100vh ;
+    margin-bottom: 60px / $viewport-height * 100vh;
+
 }
 
 .portfolio-nav-item {
     width: 85px / $viewport-height * 100vh;
     height: 40px / $viewport-height * 100vh;
     border: 1px solid black;
+    box-sizing: border-box;
     display: inline-block;
     margin-right: 20px / $viewport-height * 100vh;
     font-size: 18px / $viewport-height * 100vh;
-    //line-height: (18px + 19.5/2 ) / 18px;
+    cursor: pointer;
     line-height: 40px / $viewport-height * 100vh;
     border-radius: 6px;
     @include omega(4);
-    @include clearfix;
 }
 
 .portfolio-nav-item:hover {
@@ -51,6 +51,7 @@
 .portfolio-image-item {
     @include column-col(4);
     @include omega(3);
+    padding-top: 35px / $viewport-height * 100vh;
 }
 .portfolio-image-item__text {
     font-size: 24px / $viewport-height * 100vh;
@@ -65,20 +66,20 @@
     line-height: (17px + 27px / 2) / 17px;
 }
 
-.portfolio-button {
-    @include grid-container;
-    @include background-image("about/button.svg");
-    background-size: contain;
-    padding-bottom: 80px / 1100px * 100vh;
-    position: relative;
+.portfolio-button-container{
 
-    &:after {
-        content: "Watch more";
-        position: absolute;
-        top: 35%;
-        left: 6%;
-        font-size: 20px / 1100px * 100vh;
-        color: #fff;
-    }
+}
+.portfolio-button {
+    background-color: $second-color;
+    border-radius: 4px;
+    width: 230px / $viewport-height * 100vh;
+    height: 70px / $viewport-height * 100vh;
+    border-width: 5px;
+    border-bottom: solid #6b2e68;
+    font-size: 20px / 1100px * 100vh;
+    color: #fff;
+    line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
+    margin: 68px / $viewport-height * 100vh auto 0 auto;
+    cursor: pointer;
 }
 

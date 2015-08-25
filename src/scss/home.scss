@@ -8,6 +8,10 @@ img, object {
   max-width: 100%;
 }
 
+object {
+  cursor: pointer;
+}
+
 #home {
   height: 100vh;
   @include background-image("header/header_bg.png");
@@ -21,6 +25,7 @@ img, object {
     padding-top: 85px / $viewport-height * 100vh;
     padding-bottom: 80px / $viewport-height * 100vh;
     font-size: 90px/$viewport-height * 100vh;
+    @include spans-color($base-color,$second-color);
   }
   h2 {
     @include zeroing-margin-pad;

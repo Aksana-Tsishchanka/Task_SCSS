@@ -1,0 +1,81 @@
+@import "mixins";
+@import "portfolio";
+
+
+.contact {
+  @include grid-container;
+  padding-top: 190px / $viewport-height * 100vh;
+  padding-bottom: 168px / $viewport-height * 100vh ;
+}
+
+.contact-header {
+  @extend .portfolio-header;
+  padding-bottom: 170px / $viewport-height * 100vh
+}
+
+.contact-header__text {
+  @extend .portfolio-header__text;
+  left: 15%;
+}
+
+.contact-form {
+  @include column-col(5);
+}
+
+.contact-info {
+  @include offsets-column(1);
+  @include column-col(6);
+  text-align: left;
+}
+
+.contact-form {
+  input, textarea {
+    width: 100%;
+    margin-bottom: 35px / $viewport-height * 100vh;
+    padding-left: 34px / $viewport-height * 100vh;
+    padding-top: 10px / $viewport-height * 100vh;
+    box-sizing: border-box;
+  }
+
+  input {
+    height: 75px / $viewport-height * 100vh;
+  }
+}
+
+.contact-info__descroption {
+  font-size: 23px / $viewport-height * 100vh;
+  color: $first-letter-color;
+  padding-bottom: 54px / $viewport-height * 100vh;
+}
+.contact-info__adress {
+  color: $contact-text;
+  font-size: 28px / $viewport-height * 100vh;
+  line-height: (28px + 38px/2) / 38px;
+  padding-bottom: 40px / $viewport-height * 100vh;
+}
+
+.contact-info__phone {
+  @extend .contact-info__adress;
+  padding-bottom: 70px / $viewport-height * 100vh;
+}
+
+.contact-info {
+  .social-icons {
+
+    .icon__facebook, .icon__google, .icon__twitter {
+      background-position: left;
+      width: 15%;
+    }
+  }
+}
+
+.contact-button {
+  @extend .portfolio-button;
+}
+
+.footer-logo {
+  @include grid-container;
+  @include spans-color($base-color-about-nav,$second-color);
+  font-size: 51px / $viewport-height * 100vh;
+  padding-bottom: 130px / $viewport-height * 100vh;
+}

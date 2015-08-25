@@ -15,6 +15,10 @@ $font-color-about: #79447b;
 $statistic-bg-color: #eeeeee;
 $font-after: #907676;
 $portfolio-color-font: black;
+$first-letter-color: #676767;
+$contact-text: #3f3f3f;
+
+
 
 @mixin grid-container {
   width: 100%;
@@ -85,4 +89,14 @@ $portfolio-color-font: black;
 
 @mixin margin-direction($direction) {
   margin-#{$direction}: $margin-indent-home-nav;
+}
+
+@mixin spans-color($first-color,$second-color) {
+  span:nth-child(odd)  {
+    color: $first-color;
+  }
+
+  span:nth-child(even) {
+    color: $second-color;
+  }
 }
