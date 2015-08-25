@@ -141,6 +141,7 @@ svg:hover .about__button-cls-1 {
     font-size: 20px / 1100px * 100vh;
     color: #fff;
     line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
+    cursor: pointer;
     }
 }
 

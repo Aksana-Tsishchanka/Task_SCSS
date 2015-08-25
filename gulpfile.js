@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var concatCss = require('gulp-concat-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 var src = {
     scss: '"src/scss/*.scss"',
@@ -34,7 +35,7 @@ gulp.task('sass', function() {
 gulp.task('combine-css',['sass'], function() {
     return gulp.src('src/scss/css/*.css')
        // .pipe(minifyCSS())
-       // .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
+           .pipe(autoprefixer('last 2 version'))
            .pipe(concatCss('style.css'))
            .pipe(gulp.dest('build/css'));
 });
