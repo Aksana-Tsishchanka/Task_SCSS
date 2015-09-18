@@ -24,9 +24,26 @@
 .team-arrow-container {
     @include column-col(2);
     @include offsets-column(5);
-    @include background-style("team/arrow.png");
-    padding-bottom: 90px / 1100px * 100vh;
     margin-bottom: 115px / 1100px * 100vh;
+    cursor: pointer;
+
+    .team-arrow-left, .team-arrow-right {
+        width: 50%;
+        padding-bottom: 90px / 1100px * 100vh;
+        opacity: 0.5;
+        float: left;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+        .team-arrow-left {
+            @include background-style("team/arrow-left.png");
+        }
+
+        .team-arrow-right {
+            @include background-style("team/arrow-right.png");
+        }
 }
 
 .team-player-panel {
@@ -35,28 +52,28 @@
 
 .team-player {
     @include column-col(4);
+
+
 }
 
 .team-player-photo {
-    @include background-image("team/photo.png");
+    @include background-style("team/photo.png");
     background-size: contain;
     padding-bottom: 245px / $viewport-height * 100vh;
 
 }
 
 .team-player-name {
-    text-align: left;
     font-size: 24px / $viewport-height * 100vh;
     padding-top: 65px / $viewport-height * 100vh;
-    padding-left: 2vh;
+    @include  centered_text();
 }
 
 .team-player-title {
-    text-align: left;
     font-size: 18px / $viewport-height * 100vh;
-    padding-left: 3vh;
     padding-top: 15px / $viewport-height * 100vh;
     padding-bottom: 22px / $viewport-height * 100vh;
+    @include  centered_text();
 }
 
 .social-icons {

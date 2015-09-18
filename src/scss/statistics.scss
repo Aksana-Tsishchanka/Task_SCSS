@@ -24,9 +24,9 @@
 .statistic-index {
   margin-bottom: 140px / $viewport-height * 100vh;
   div {
-    @include offsets-column(1);
-    @include column-col(2);
+    @include column-col(3);
     font-size: 64px / $viewport-height * 100vh;
+    text-align: center;
 
     &::after {
       content: "Lorem ipsum";
@@ -38,16 +38,16 @@
 }
 .statistic-player {
   color: $base-color-about-nav;
+
+  &-photo {
+    @include offsets-column(5);
+    @include column-col(2);
+    @include omega(1);
+    @include background-style("team/photo.png");
+    padding-bottom: 185px / $viewport-height * 100vh;
+  }
 }
 
-.statistic-player-photo {
-  @include offsets-column(5);
-  @include column-col(2);
-  @include omega(1);
-  @include background-style("team/photo.png");
-  padding-bottom: 185px / $viewport-height * 100vh;
-
-}
 
 .statistic-player-citation {
   @include offsets-column(1);
@@ -68,13 +68,22 @@
 .statistic-nav {
   @include offsets-column(5);
   @include column-col(2);
+  text-align: center;
     
   .round {
     @include background-style("statistic/ellipse-nav.svg");
-
+    //width: 13px / $viewport-height * 100vh;
+    //padding-right: 7px / $viewport-height * 100vh;
     padding-bottom: 30px / $viewport-height * 100vh;
-    padding-right: 20px / $viewport-height * 100vh;
-    display: inline-table;
+    width: 13px / $viewport-height * 100vh;
+    padding-right: 7px / $viewport-height * 100vh;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .clear {
+    clear: left;
+    height: 0;
   }
 
 }

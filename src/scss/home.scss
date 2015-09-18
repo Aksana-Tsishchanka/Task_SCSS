@@ -1,5 +1,6 @@
 @import "mixins";
 
+
 body {
   font: 100% $font-size $font-stack;
 }
@@ -106,11 +107,9 @@ object {
 
 .home-scroll {
   @include column-col(2);
-  @include offsets-column(6);
+  @include offsets-column(5);
   padding-bottom: 109px /$viewport-height * 100vh;
-  @include background-image("header/header_scroller/scroller.svg");
-  background-size: contain;
-
+  @include background-style("header/header_scroller/scroller.png");
 }
 
 /*

@@ -12,32 +12,24 @@ var src = {
 };
 
 // Static Server + watching style.css/html files
-gulp.task('serve', ['combine-css'], function() {
+gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
         server: "./"
     });
 
-    gulp.watch("src/scss/*.scss", ['combine-css']).on('change', browserSync.reload);
+    gulp.watch("src/scss/*.scss", ['sass']).on('change', browserSync.reload);
     gulp.watch("index.html").on('change', browserSync.reload);
     gulp.watch("src/assets/*/*.*").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("src/scss/*.scss")
+    return gulp.src("src/scss/style.scss")
         .pipe(sass())
-        .pipe(gulp.dest("src/scss/css"))
+        .pipe(gulp.dest("build/css"))
         .pipe(browserSync.stream());
 });
 
-
-gulp.task('combine-css',['sass'], function() {
-    return gulp.src('src/scss/css/*.css')
-       // .pipe(minifyCSS())
-           .pipe(autoprefixer('last 2 version'))
-           .pipe(concatCss('style.css'))
-           .pipe(gulp.dest('build/css'));
-});
 
 gulp.task('default', ['serve']);

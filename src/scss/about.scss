@@ -30,14 +30,14 @@ svg:hover .about__button-cls-1 {
   @include column-col(2);
   font-size: 30px / 1100px * 100vh;
   line-height: 1;
-  @include spans-color($base-color-about-nav,$second-color);
+  @include spans-color($base-color-about-nav, $second-color);
 }
 
 .about-menu {
   @include column-col(8);
   @include offsets-column(2);
   @include zeroing-margin-pad;
-  line-height: (18px + 30px/2) / 18px ;
+  line-height: (18px + 30px/2) / 18px;
   font-size: 18px / 1100px * 100vh;
   float: right;
 }
@@ -98,7 +98,7 @@ svg:hover .about__button-cls-1 {
   position: relative;
   font-size: 48px / 1100px * 100vh;
   padding-bottom: 120px / 1100px * 100vh;
-  margin-bottom: 130px / 1100px * 100vh ;
+  margin-bottom: 130px / 1100px * 100vh;
 }
 
 .about-section-header__text {
@@ -126,12 +126,13 @@ svg:hover .about__button-cls-1 {
 
   .info-text {
     text-align: left;
-    margin-bottom: 130px / 1100px * 100vh;
+    margin-bottom: 130px / $viewport-height * 100vh;
     color: $base-color-nav;
     font-size: 16px / 1100px * 100vh;
     line-height: (16px + 36px/ 2) / 16px;
   }
-  .about-button {
+
+  /*.about-button {
     background-color: $second-color;
     border-radius: 4px;
     width: 230px / $viewport-height * 100vh;
@@ -140,9 +141,9 @@ svg:hover .about__button-cls-1 {
     border-bottom: solid #6b2e68;
     font-size: 20px / 1100px * 100vh;
     color: #fff;
-    line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
+    line-height: 70px / $viewport-height * 100vh;  /!*(for centering text vertically)*!/
     cursor: pointer;
-    }
+    }*/
 }
 
 .quote-section {

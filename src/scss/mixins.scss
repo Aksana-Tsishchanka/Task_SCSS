@@ -22,7 +22,7 @@ $contact-text: #3f3f3f;
 
 @mixin grid-container {
   width: 100%;
-  text-align: center;
+  text-align: center; //?
   box-sizing: border-box;
   max-width: $max-width-grid-container;
   margin: 0 auto;
@@ -47,7 +47,7 @@ $contact-text: #3f3f3f;
 }
 
 @mixin offsets-column($n) {
-  margin-left: $n * ($max-width-grid-container + $gutter) / 12 - $gutter * 2;
+  margin-left: $n * ($max-width-grid-container + $gutter) / 12;
 }
 
 @mixin margin-right {
@@ -99,4 +99,9 @@ $contact-text: #3f3f3f;
   span:nth-child(even) {
     color: $second-color;
   }
+}
+
+@mixin centered_text() {
+  width: 100%;
+  text-align: center;
 }
