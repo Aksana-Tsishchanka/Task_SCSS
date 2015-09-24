@@ -19,6 +19,7 @@
   @include grid-container;
   padding-top: 160px / $viewport-height * 100vh;
   padding-bottom: 95px / $viewport-height * 100vh;
+  font-family: "HelveticaNeueLTStd-Lt";
 }
 
 .statistic-index {
@@ -60,6 +61,7 @@
 
 .statistic-player-name {
   font-size: 20px / $viewport-height * 100vh;
+  font-family: "Lato_bold";
   @include offsets-column(4);
   @include column-col(4);
   padding-bottom: 50px / $viewport-height * 100vh;

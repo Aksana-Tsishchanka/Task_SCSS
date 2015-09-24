@@ -35,6 +35,7 @@
 
         &:hover {
             opacity: 1;
+            transition: opacity 0.5s;
         }
     }
         .team-arrow-left {
@@ -65,38 +66,17 @@
 
 .team-player-name {
     font-size: 24px / $viewport-height * 100vh;
+    font-family: "Lato_bold";
     padding-top: 65px / $viewport-height * 100vh;
     @include  centered_text();
 }
 
 .team-player-title {
     font-size: 18px / $viewport-height * 100vh;
+    font-family: "Lato_light";
     padding-top: 15px / $viewport-height * 100vh;
     padding-bottom: 22px / $viewport-height * 100vh;
+
     @include  centered_text();
-}
-
-.social-icons {
-    @include clearfix;
-
-    .social-icon {
-        padding-bottom: 70px / $viewport-height * 100vh;
-        width:25%;
-        float: left;
-        padding-left: 3vh;
-        cursor: pointer;
-    }
-}
-
-.icon__facebook {
-    @include background-style("team/icon_facebook.png");
-
-}
-.icon__google {
-    @include background-style("team/icon_google.png");
-}
-
-.icon__twitter {
-    @include background-style("team/icon_twitter.png");
 }
 

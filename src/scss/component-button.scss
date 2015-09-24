@@ -5,15 +5,21 @@
   border-radius: 4px;
   width: 230px / $viewport-height * 100vh;
   height: 70px / $viewport-height * 100vh;
-  border-width: 0px;
-  border-bottom: solid #6b2e68;
+  border-width: 1px;
+  border-bottom: solid $color-button-border;
   font-size: 20px / 1100px * 100vh;
-  color: #fff;
+  font-family: "Existence_light";
+  color: $base-color;
   line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
   cursor: pointer;
 
-  &:hover, &:active, &:focus {
-    border-width: 1px;
+  &:hover {
+    border-bottom: 0px;
+  }
+
+  &:focus {
+    outline: 0;
+    border: solid 0px $color-button-border;
   }
 }
 

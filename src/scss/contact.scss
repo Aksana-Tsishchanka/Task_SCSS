@@ -29,7 +29,13 @@
 .contact-info {
   @include offsets-column(1);
   @include column-col(6);
-  text-align: left; //?
+  text-align: left;
+  font-family: "MyriadPro-Regular";
+
+  .social-icons {
+    margin-left: 0;
+  }
+
 }
 
 .contact-form {
@@ -39,15 +45,21 @@
     padding-left: 34px / $viewport-height * 100vh;
     padding-top: 10px / $viewport-height * 100vh;
     box-sizing: border-box;
+    font-family: "MyriadPro-Regular";
   }
 
   input {
     height: 75px / $viewport-height * 100vh;
+
+  }
+  input[placeholder], textarea[placeholder] {
+    font-size: 23px / $viewport-height * 100vh;
   }
 }
 
 .contact-info__description {
   font-size: 23px / $viewport-height * 100vh;
+
   color: $first-letter-color;
   padding-bottom: 54px / $viewport-height * 100vh;
 }
@@ -73,6 +85,10 @@
   }
 }
 
+.contact-button-container {
+  padding-top: 60px / $viewport-height * 100vh;
+  text-align: left;
+}
 .contact-button {
   @extend .portfolio-button;
   margin: 0;
@@ -82,5 +98,6 @@
   @include grid-container;
   @include spans-color($base-color-about-nav,$second-color);
   font-size: 51px / $viewport-height * 100vh;
+  font-family: "MyriadPro-Regular";
   padding-bottom: 130px / $viewport-height * 100vh;
 }

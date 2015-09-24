@@ -27,18 +27,20 @@
         </header>
     </div>
     <div id="about">
-        <nav>
-            <div class="about-logo"><span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span></div>
-            <ul class="about-menu">
-                <li class="about-menu-item"><a href="#">HOME</a></li>
-                <li class="about-menu-item"><a href="#">ABOUT</a></li>
-                <li class="about-menu-item"><a href="#">TEAM</a></li>
-                <li class="about-menu-item"><a href="#">SERVICES</a></li>
-                <li class="about-menu-item"><a href="#">PORTFOLIO</a></li>
-                <li class="about-menu-item"><a href="#">BLOG</a></li>
-                <li class="about-menu-item"><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+        <section class="fixed-nav">
+            <nav>
+                <div class="about-logo"><span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span></div>
+                <ul class="about-menu">
+                    <li class="about-menu-item"><a href="#">HOME</a></li>
+                    <li class="about-menu-item"><a href="#">ABOUT</a></li>
+                    <li class="about-menu-item"><a href="#">TEAM</a></li>
+                    <li class="about-menu-item"><a href="#">SERVICES</a></li>
+                    <li class="about-menu-item"><a href="#">PORTFOLIO</a></li>
+                    <li class="about-menu-item"><a href="#">BLOG</a></li>
+                    <li class="about-menu-item"><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </section>
         <section class="about-feature ">
             <div class="about-feature-container">
                 <div class="about-feature-item"><object type="image/svg+xml" data="src/assets/feature/heart.svg" alt=""></object>
@@ -152,28 +154,43 @@
                     <div class="experiense-text__title">WED DESIGN</div>
                     <div class="experience-text__percent">90%</div>
                 </div>
-                <div class="experience-line-bg experience-web-d__bg"></div>
+                <div class="experience-line-bg">
+                    <div class="experience-web-d__bg"></div>
+                </div>
             </div>
             <div class="experience__graphic-d">
                 <div class="experiense-text">
                     <div class="experiense-text__title">GRAPHIC DESIGN</div>
                     <div class="experience-text__percent">70%</div>
                 </div>
-                <div class="experience-line-bg experience-graphic-d__bg"></div>
+                <div class="experience-line-bg">
+                    <div class="experience-graphic-d__bg">
+                    </div>
+                </div>
+
             </div>
             <div class="experience__html-css">
                 <div class="experiense-text">
                     <div class="experiense-text__title">HTML / CSS</div>
                     <div class="experience-text__percent">75%</div>
                 </div>
-                <div class="experience-line-bg experience-html-css__bg"></div>
+                <div class="experience-line-bg">
+                    <div class="experience-html-css__bg">
+
+                    </div>
+                </div>
+
             </div>
             <div class="experience__ui-ux">
                 <div class="experiense-text">
                     <div class="experiense-text__title">UI / UX</div>
                     <div class="experience-text__percent">85%</div>
                 </div>
-                <div class="experience-line-bg experience-ui-ux__bg"></div>
+                <div class="experience-line-bg">
+                    <div class="experience-ui-ux__bg">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -262,8 +279,8 @@
                 <input type="text" class="contact-name" placeholder="Your Name"/>
                 <input type="text" class="contact-email" placeholder="Your email"/>
                 <textarea name="message" id="" cols="30" rows="10" class="contact-message" placeholder="Your message"></textarea>
-                <div class="portfolio-button-container">
-                    <div class="contact-button">Send email</div>
+                <div class="contact-button-container">
+                    <button class="component-button">Send email</button>
                 </div>
             </form>
             <div class="contact-info">

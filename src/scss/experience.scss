@@ -3,22 +3,25 @@
 .experience__web-d {
   @include offsets-column(1);
   @include column-col(5);
-  padding-bottom: 40px / $viewport-height * 100vh;
 }
 
 .experience-web-d__bg {
-  @include background-style("skills/web-design.svg");
-
+  width: $web-d-percents;
+  background-color: $second-color;
+  height: 20px / $viewport-height * 100vh;
 }
 
 .experience__graphic-d {
   @include column-col(5);
   @include omega(2);
   @include offsets-column(1);
-  padding-bottom: 40px / $viewport-height * 100vh;
+  padding-bottom: 20px / $viewport-height * 100vh;
+  //background-color: #f0f0f0;
 }
 .experiense-text {
   @include clearfix;
+  padding-bottom: 10px / $viewport-height * 100vh;
+  font-family: "HelveticaNeueLTStd-BdIt";
 }
 
 .experiense-text__title {
@@ -31,14 +34,18 @@
   float: right;
   font-size: 24px / $viewport-height * 100vh;
   line-height: (24px + 18px / 2) / 24px;
+  color: $color-text-percents;
 }
 
 .experience-graphic-d__bg {
-  @include background-style("skills/graphic-design.svg");
+  width: $graphic-d__bg-percents;
+  background-color: $second-color;
+  height: 20px / $viewport-height * 100vh;
 }
 
 .experience-line-bg {
-  padding-bottom: 40px / $viewport-height * 100vh;
+  height: 20px / $viewport-height * 100vh;
+  background-color: $color-bg-substrate;
 }
 
 .experience__html-css {
@@ -46,7 +53,9 @@
 }
 
 .experience-html-css__bg {
-  @include background-style("skills/html-css.svg");
+  width: $html-css__bg-percents;
+  background-color: $second-color;
+  height: 20px / $viewport-height * 100vh;
 }
 
 .experience__ui-ux {
@@ -54,5 +63,7 @@
 }
 
 .experience-ui-ux__bg {
-  @include background-style("skills/ui-ux.svg");
+  width: $ui-ux__bg-percents;
+  background-color: $second-color;
+  height: 20px / $viewport-height * 100vh;
 }

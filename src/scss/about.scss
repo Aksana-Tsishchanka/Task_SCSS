@@ -21,14 +21,23 @@ svg:hover .about__button-cls-1 {
   fill: #9f449b;
 }
 
+.fixed-nav {
+  padding-top: 57px / 1100px * 100vh;
+  padding-bottom: 44px / 1100px * 100vh;
+  background-color: white;
+  //position: fixed;
+}
+
 #about nav {
+
   @include grid-container;
-  margin-top: 57px / 1100px * 100vh;
-  margin-bottom: 44px / 1100px * 100vh;
+
 }
 .about-logo {
   @include column-col(2);
   font-size: 30px / 1100px * 100vh;
+  font-family: "Existence_light";
+  font-weight: bold;
   line-height: 1;
   @include spans-color($base-color-about-nav, $second-color);
 }
@@ -46,6 +55,7 @@ svg:hover .about__button-cls-1 {
   @include list-style-none;
   display: inline;
   @include margin-right;
+  font-family: 'Lato_light';
 
   a, a:hover {
     text-decoration: none;
@@ -73,6 +83,7 @@ svg:hover .about__button-cls-1 {
 
   h4, .about-feature-item-description  {
     color: $base-color-nav;
+    font-family: "Lato_light";
   }
 
   h4 {
@@ -107,6 +118,8 @@ svg:hover .about__button-cls-1 {
   left: 24%;
   color: $font-color-about;
   @include spans-color($base-color-about-nav,$second-color);
+  font-family: "Existence_light";
+  font-weight: bold;
 }
 
 .about-body {
@@ -123,12 +136,13 @@ svg:hover .about__button-cls-1 {
 
 .about-body-info {
   @include column-col(5);
+  text-align: left;
 
   .info-text {
-    text-align: left;
     margin-bottom: 130px / $viewport-height * 100vh;
     color: $base-color-nav;
     font-size: 16px / 1100px * 100vh;
+    font-family: "Lato_light";
     line-height: (16px + 36px/ 2) / 16px;
   }
 
@@ -165,6 +179,7 @@ svg:hover .about__button-cls-1 {
   @include offsets-column(2);
   @include column-col(8);
   font-size: 48px / 1100px * 100vh;
+  font-family: "Lato_regular";
   color: $base-color;
   padding-top: 64px / 1100px * 100vh;
   padding-bottom: 181px / 1100px * 100vh;
@@ -184,6 +199,7 @@ svg:hover .about__button-cls-1 {
 
 .service-text {
   @extend .quote-study-text;
+
 }
 
 

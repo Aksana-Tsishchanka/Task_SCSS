@@ -17,12 +17,17 @@ $font-after: #907676;
 $portfolio-color-font: black;
 $first-letter-color: #676767;
 $contact-text: #3f3f3f;
-
-
+$color-button-border: #6b2e68;
+$web-d-percents: 90%;
+$graphic-d__bg-percents: 70%;
+$html-css__bg-percents: 75%;
+$ui-ux__bg-percents: 85%;
+$color-bg-substrate: #f0f0f0;
+$color-text-percents: #856b6b;
 
 @mixin grid-container {
   width: 100%;
-  text-align: center; //?
+  text-align: center;
   box-sizing: border-box;
   max-width: $max-width-grid-container;
   margin: 0 auto;

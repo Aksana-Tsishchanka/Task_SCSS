@@ -31,6 +31,7 @@
     display: inline-block;
     margin-right: 20px / $viewport-height * 100vh;
     font-size: 18px / $viewport-height * 100vh;
+    font-family: "HelveticaNeueLTStd-Lt";
     cursor: pointer;
     line-height: 40px / $viewport-height * 100vh;
     border-radius: 6px;
@@ -56,6 +57,7 @@
 
 .portfolio-image-item__text {
     font-size: 24px / $viewport-height * 100vh;
+    font-family: "HelveticaNeueLTStd-Lt";
     color: $portfolio-color-font;
     line-height: (24px + 27px / 2) / 27px;
 }
