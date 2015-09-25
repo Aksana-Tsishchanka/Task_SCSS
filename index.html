@@ -10,7 +10,7 @@
 <body>
     <div id="home">
         <header>
-            <h1><span>Bhagas</span><span>kara</span><span>.</span></h1>
+            <h1><a id="home_anch"><span>Bhagas</span><span>kara</span><span>.</span></a></h1>
             <h2 class="base-color">Fusce rutrum pretium lorem semper nulla.</h2>
             <h3 class="base-color">Vestibulum ornare cursus nisl, fermentum tincidunt libero pretium et. Maecenas interdum ligula non fermentum fringilla.</h3>
             <ul class="home-nav">
@@ -29,10 +29,12 @@
     <div id="about">
         <section class="fixed-nav">
             <nav>
-                <div class="about-logo"><span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span></div>
+                <div class="about-logo">
+                        <span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span>
+                </div>
                 <ul class="about-menu">
-                    <li class="about-menu-item"><a href="#">HOME</a></li>
-                    <li class="about-menu-item"><a href="#">ABOUT</a></li>
+                    <li class="about-menu-item"><a href="#home_anch">HOME</a></li>
+                    <li class="about-menu-item"><a href="#about_anch">ABOUT</a></li>
                     <li class="about-menu-item"><a href="#">TEAM</a></li>
                     <li class="about-menu-item"><a href="#">SERVICES</a></li>
                     <li class="about-menu-item"><a href="#">PORTFOLIO</a></li>
@@ -74,8 +76,11 @@
             </div>
         </section>
         <section class="about-section">
+            <a id="about_anch"></a>
             <div class="about-section-header">
-                <div class="about-section-header__text"><span>About</span><span> us</span></div>
+                <div class="about-section-header__text">
+                   <span>About</span><span> us</span>
+                </div>
             </div>
             <div class="about-body">
                 <div class="about-body-devices">
