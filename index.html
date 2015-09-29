@@ -9,8 +9,9 @@
 </head>
 <body>
     <div id="home">
+        <a id="home_anch"></a>
         <header>
-            <h1><a id="home_anch"><span>Bhagas</span><span>kara</span><span>.</span></a></h1>
+            <h1><span>Bhagas</span><span>kara</span><span>.</span></h1>
             <h2 class="base-color">Fusce rutrum pretium lorem semper nulla.</h2>
             <h3 class="base-color">Vestibulum ornare cursus nisl, fermentum tincidunt libero pretium et. Maecenas interdum ligula non fermentum fringilla.</h3>
             <ul class="home-nav">
@@ -27,19 +28,19 @@
         </header>
     </div>
     <div id="about">
-        <section class="fixed-nav">
+        <section id="about-nav">
             <nav>
                 <div class="about-logo">
-                        <span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span>
+                    <span class="base-color">Bhagas</span><span class="second-color">kara</span><span class="base-color">.</span>
                 </div>
                 <ul class="about-menu">
                     <li class="about-menu-item"><a href="#home_anch">HOME</a></li>
                     <li class="about-menu-item"><a href="#about_anch">ABOUT</a></li>
-                    <li class="about-menu-item"><a href="#">TEAM</a></li>
-                    <li class="about-menu-item"><a href="#">SERVICES</a></li>
-                    <li class="about-menu-item"><a href="#">PORTFOLIO</a></li>
-                    <li class="about-menu-item"><a href="#">BLOG</a></li>
-                    <li class="about-menu-item"><a href="#">CONTACT</a></li>
+                    <li class="about-menu-item"><a href="#team">TEAM</a></li>
+                    <li class="about-menu-item"><a href="#service_anch">SERVICES</a></li>
+                    <li class="about-menu-item"><a href="#portfolio_anch">PORTFOLIO</a></li>
+                    <li class="about-menu-item"><a href="#blog_anch">BLOG</a></li>
+                    <li class="about-menu-item"><a href="#contact_anch">CONTACT</a></li>
                 </ul>
             </nav>
         </section>
@@ -75,8 +76,8 @@
                 </div>
             </div>
         </section>
-        <section class="about-section">
-            <a id="about_anch"></a>
+        <!--<a id="about_anch"></a>-->
+        <section id="about_anch" class="about-section">
             <div class="about-section-header">
                 <div class="about-section-header__text">
                    <span>About</span><span> us</span>
@@ -104,6 +105,7 @@
         </div>
     </div>
 
+    <!--<a id="team_anch"></a>-->
     <div id="team">
         <section class="team-header">
             <div class="team-header__text"><span>Our</span><span> Team</span></div>
@@ -199,12 +201,14 @@
             </div>
         </div>
     </div>
-    <div class="service-section">
+    <div class="service-section" id="service_anch">
         <div class="service-container">
             <div class="service-icon"><object type="image/svg+xml" data="src/assets/service/think-icon.svg" alt=""></object></div>
             <div class="service-text">Our services will lorem and ipsum  your aliquam</div>
         </div>
     </div>
+
+    <a id="blog_anch"></a>
     <div class="statistic-section-bg">
         <div class="statistic-section">
             <div class="statistic-index">
@@ -230,7 +234,7 @@
         </div>
     </div>
 
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio_anch">
         <div class="portfolio-header">
             <div class="portfolio-header__text">
                 <span>Our</span><span> Portfolio</span>
@@ -244,27 +248,39 @@
         </div>
             <div class="portfolio-container-image">
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/field.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/field.png" alt=""/>
+                    </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/forest.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/forest.png" alt=""/>
+                    </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/city_only.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/city_only.png" alt=""/>
+                    </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/sea_without_sky.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/sea_without_sky.png" alt=""/>
+                     </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/sea.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/sea.png" alt=""/>
+                    </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
                 <div class="portfolio-image-item">
-                    <img src="src/assets/portfolio/city.png" alt=""/>
+                    <div class="substrate">
+                        <img src="src/assets/portfolio/city.png" alt=""/>
+                    </div>
                     <div class="portfolio-image-item__text">Neque Porro Quisquam</div>
                 </div>
             </div>
@@ -273,7 +289,8 @@
             </div>
 
     </div>
-    <div class="contact">
+
+    <div class="contact" id="contact_anch">
         <div class="contact-header">
             <div class="contact-header__text">
                 <span>Get</span><span> in touch </span>
@@ -303,4 +320,6 @@
     </div>
     <footer class="footer-logo"><span>Bhagas</span><span>kara</span><span>.</span></footer>
 </body>
+<script language="javascript" type="text/javascript" src="src/js/fixed-nav.js">
+</script>
 </html>

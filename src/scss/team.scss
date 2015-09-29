@@ -31,11 +31,11 @@
         width: 50%;
         padding-bottom: 90px / 1100px * 100vh;
         opacity: 0.5;
+        transition: opacity 0.5s;
         float: left;
 
         &:hover {
             opacity: 1;
-            transition: opacity 0.5s;
         }
     }
         .team-arrow-left {

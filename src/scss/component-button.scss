@@ -12,9 +12,10 @@
   color: $base-color;
   line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
   cursor: pointer;
+  transition: border-bottom-width  0.4s;
 
   &:hover {
-    border-bottom: 0px;
+    border-bottom-width: 0px;
   }
 
   &:focus {

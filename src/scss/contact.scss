@@ -48,6 +48,9 @@
     font-family: "MyriadPro-Regular";
   }
 
+  textarea {
+    resize: vertical;
+  }
   input {
     height: 75px / $viewport-height * 100vh;
 

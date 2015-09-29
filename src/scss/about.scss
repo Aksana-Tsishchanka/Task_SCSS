@@ -5,34 +5,48 @@ svg {
   cursor: pointer;
 }
 
+svg .feature-cls-1, svg .quote-cls-1, svg .quote-cls-2, svg .think-cls-1, svg .think-cls-2 {
+  transition: stroke 0.7s;
+}
+
 svg:hover .feature-cls-1, svg:hover .feature-cls-2, svg:hover .quote-cls-1, svg:hover .quote-cls-2, svg:hover .think-cls-1, svg:hover .think-cls-2 {
   stroke: #a93d8b;
   fill-opacity: 1;
 }
 
+svg .feature-cls-2, svg .quote-cls-2, svg .think-cls-2 {
+  transition: fill 1s;
+}
+
+
 svg:hover .feature-cls-2, svg:hover .quote-cls-2, svg:hover .think-cls-2 {
   fill: #a93d8b;
 }
 
-svg:hover .about__button-cls-2 {
-  fill: #562081;
+
+#about {
+  position: relative;
 }
-svg:hover .about__button-cls-1 {
-  fill: #9f449b;
+
+#about-nav {
+  width: 100%;
+  padding-top: 57px / 1100px * 100vh;
+  padding-bottom: 44px / 1100px * 100vh;
+  background-color: $base-color;
 }
 
 .fixed-nav {
-  padding-top: 57px / 1100px * 100vh;
-  padding-bottom: 44px / 1100px * 100vh;
-  background-color: white;
-  //position: fixed;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: $statistic-bg-color;
 }
+
 
 #about nav {
-
   @include grid-container;
-
 }
+
 .about-logo {
   @include column-col(2);
   font-size: 30px / 1100px * 100vh;

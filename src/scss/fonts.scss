@@ -50,12 +50,27 @@
   font-style: normal;
 }
 
-
+@font-face {
+  font-family: 'HelveticaNeueLTStd-BdIt';
+  src: url('../../src/assets/fonts/HelveticaNeueLTStd-BdIt/HelveticaNeueLTStd-BdIt.woff2') format('woff2'),
+  url('../../src/assets/fonts/HelveticaNeueLTStd-BdIt/HelveticaNeueLTStd-BdIt.woff') format('woff'),
+  url('../../src/assets/fonts/HelveticaNeueLTStd-BdIt/HelveticaNeueLTStd-BdIt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'MyriadPro-Regular';
   src:  url('../../src/assets/fonts/myriad-pro-regular/MyriadPro-Regular.woff') format('woff'),
   url('../../src/assets/fonts/myriad-pro-regular/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Lt';
+  src:  url('../../src/assets/fonts/HelveticaNeueLTStd-Lt/HelveticaNeueLTStd-Lt.woff') format('woff'),
+  url('../../src/assets/fontsHelveticaNeueLTStd-Lt/HelveticaNeueLTStd-Lt.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -61,10 +61,10 @@ object {
     padding-bottom: $margin-indent-home-nav;
     height: 0;
     opacity: 0.5;
+    transition: opacity 1s;
 
     &:hover {
       opacity: 1;
-      transition: opacity 0.5s;
     }
   }
 
@@ -125,6 +125,7 @@ object {
   padding-bottom: 109px /$viewport-height * 100vh;
   @include background-style("header/header_scroller/scroller.png");
   opacity: 0.5;
+  cursor: pointer;
 
   &:hover {
     opacity: 1;
@@ -132,33 +133,3 @@ object {
   }
 }
 
-/*
-#team {
-  height: 1765px;
-}
-
-#service {
-  height: 2310px;
-}
-#portfolio {
-  height: 1475px;
-}
-#contact {
-  height: 1325px;
-}
-
-
-section.feature{
-  height: 1.5%;
-  background-color: red;
-}
-section.about{
-  height: 8%;
-  background-color: #004444;
-}
-
-section.quote{
-  height: 10.5%;
-  background-color: #00DD00;
-}
-*/
