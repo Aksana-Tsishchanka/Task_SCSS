@@ -28,24 +28,36 @@ svg:hover .feature-cls-2, svg:hover .quote-cls-2, svg:hover .think-cls-2 {
   position: relative;
 }
 
-#about-nav {
+#about .about-nav {
   width: 100%;
+}
+
+nav  {
+  @include grid-container;
+  background-color: $base-color;
   padding-top: 57px / 1100px * 100vh;
   padding-bottom: 44px / 1100px * 100vh;
-  background-color: $base-color;
+  //height: 101px / 1100px * 100vh;
 }
 
 .fixed-nav {
+  padding-bottom: 101px / 1100px * 100vh;
+}
+
+.about-nav-bg {
+  width: 100%;
+  background-color: $base-color;
+}
+
+.about-nav.fixed-nav .about-nav-bg {
   position: fixed;
-  top: 0;
   z-index: 1;
-  background-color: $statistic-bg-color;
+  top: 0;
+  width: 100%;
+  //padding-top: 57px / 1100px * 100vh;
+  //padding-bottom: 44px / 1100px * 100vh;
 }
 
-
-#about nav {
-  @include grid-container;
-}
 
 .about-logo {
   @include column-col(2);
