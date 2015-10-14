@@ -33,14 +33,21 @@ svg:hover .feature-cls-2, svg:hover .quote-cls-2, svg:hover .think-cls-2 {
 }
 
 nav  {
-  @include grid-container;
   background-color: $base-color;
+  //height: 101px / 1100px * 100vh;
   padding-top: 57px / 1100px * 100vh;
   padding-bottom: 44px / 1100px * 100vh;
+<<<<<<< HEAD
+=======
+
+  //display: table-cell;
+  //vertical-align: middle;
+  @include grid-container;
+>>>>>>> 6fe6b9ff575f1a9001ac014751f8ba9d2b213742
 }
 
 .fixed-nav {
-  padding-bottom: 101px / 1100px * 100vh;
+  height: 132.7px / 1100px * 100vh;
 }
 
 .about-nav-bg {
@@ -61,6 +68,7 @@ nav  {
 .about-logo {
   @include column-col(2);
   font-size: 30px / 1100px * 100vh;
+  box-sizing: border-box;
   font-family: "Existence_light";
   font-weight: bold;
   line-height: 1;
