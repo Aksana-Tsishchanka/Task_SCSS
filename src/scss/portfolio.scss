@@ -3,8 +3,6 @@
 
 .portfolio {
     @include grid-container;
-    padding-top: 98px / $viewport-height * 100vh;
-
 }
 .portfolio-header {
     @extend .about-section-header;

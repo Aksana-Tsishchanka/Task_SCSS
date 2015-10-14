@@ -1,0 +1,22 @@
+@import "mixins";
+
+.bracket-header {
+  @include background-image("about/heading-about.svg");
+  @include grid-container();
+  background-size: contain;
+  margin-top: 150px / 1100px * 100vh;
+  width: 300px / 1100px * 100vh;
+  height: 125px / 1100px * 100vh;
+  margin-bottom: 130px / 1100px * 100vh;
+}
+
+.bracket-header__text {
+  font-size: 48px / 1100px * 100vh;
+  text-align: center;
+  color: $font-color-about;
+  @include spans-color($base-color-about-nav,$second-color);
+  font-family: "Existence_light";
+  font-weight: bold;
+  padding-top: 37px / 1100px * 100vh;
+  padding-bottom: 28px / 1100px * 100vh;
+}

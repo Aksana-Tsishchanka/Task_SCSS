@@ -37,7 +37,6 @@ nav  {
   background-color: $base-color;
   padding-top: 57px / 1100px * 100vh;
   padding-bottom: 44px / 1100px * 100vh;
-  //height: 101px / 1100px * 100vh;
 }
 
 .fixed-nav {
@@ -120,12 +119,10 @@ nav  {
     font-size: 16px / 1100px * 100vh;
     line-height: (16px + 30px/2) / 16px;
   }
-
 }
 
 .about-section {
-  @include grid-container;
-  padding-top: 125px / 1100px * 100vh;
+  @include grid-container();
   padding-bottom: 234px / 1100px * 100vh;
 }
 .about-section-header {

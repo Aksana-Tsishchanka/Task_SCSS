@@ -4,7 +4,6 @@
 
 .contact {
   @include grid-container;
-  padding-top: 190px / $viewport-height * 100vh;
   padding-bottom: 168px / $viewport-height * 100vh ;
 
   &-header {
