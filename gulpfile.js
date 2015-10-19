@@ -1,9 +1,11 @@
 // Include gulp
+
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var concatCss = require('gulp-concat-css');
 var autoprefixer = require('gulp-autoprefixer');
+var fileinclude = require('gulp-file-include');
 
 var src = {
     scss: '"src/scss/*.scss"',
@@ -12,14 +14,14 @@ var src = {
 };
 
 // Static Server + watching style.css/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['fileinclude','sass'], function() {
 
     browserSync.init({
         server: "./"
     });
 
     gulp.watch("src/scss/*.scss", ['sass']).on('change', browserSync.reload);
-    gulp.watch("index.html").on('change', browserSync.reload);
+    gulp.watch("src/html/*.html").on('fileinclude', browserSync.reload);
     gulp.watch("src/assets/*/*.*").on('change', browserSync.reload);
 });
 
@@ -31,5 +33,13 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('fileinclude', function() {
+    gulp.src(['./src/html/index.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./'));
+});
 
 gulp.task('default', ['serve']);

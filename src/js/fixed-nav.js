@@ -5,6 +5,7 @@
 var navOuter = document.querySelector('#about');
 var nav =  document.querySelector(".about-nav");
 
+
 addEventListener('scroll', function() {
     var bodyHeightScroll = document.body.scrollTop;
     console.log('windowScroll', bodyHeightScroll);
@@ -17,3 +18,41 @@ addEventListener('scroll', function() {
             nav.classList.add('fixed-nav');
         }
 });
+
+
+document.addEventListener('click', function(el) {
+    el = el || window.event;
+
+    var target = el.target || el.srcElement;
+/*
+    if (startWith('#', target.getAttribute('href')) && document.querySelector(target.getAttribute('href'))) {
+
+        return scrollTo(target,30);
+
+    }
+    */
+
+}, false);
+
+function startWith(input, data) {
+    return new RegExp('^' + input).test(data);
+}
+
+
+function scrollTo(element, duration) {
+
+    var fromScroll = element.offsetTop;
+    console.log('fromScroll ' + fromScroll);
+
+    var toScroll = document.querySelector(element.getAttribute('href')).offsetTop;
+    console.log('toScroll ' + toScroll);
+
+    var distance = Math.abs(toScroll - fromScroll);
+    console.log(distance);
+    var step = distance / duration;
+
+    setTimeout(function () {
+        window.scrollBy(0, step);
+    }, 10);
+
+}
