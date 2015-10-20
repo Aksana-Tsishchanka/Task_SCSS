@@ -21,7 +21,8 @@ gulp.task('serve', ['fileinclude','sass'], function() {
     });
 
     gulp.watch("src/scss/*.scss", ['sass']).on('change', browserSync.reload);
-    gulp.watch("src/html/*.html").on('fileinclude', browserSync.reload);
+    gulp.watch("src/html/*.html",['fileinclude']).on('change', browserSync.reload);
+    //gulp.watch(["src/html/*.html"],['fileinclude', browserSync.reload]);
     gulp.watch("src/assets/*/*.*").on('change', browserSync.reload);
 });
 
