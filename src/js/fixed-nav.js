@@ -33,38 +33,65 @@ document.addEventListener('click', function(event) {
 
         event.preventDefault();
 
-        var elTo = document.querySelector(elFrom.getAttribute('href'));
+        //var fromY = event.target.getBoundingClientRect().top;
+        //var fromY = event.offsetY;
+        var fromY = document.body.scrollTop;
+        console.log('fromY ' + fromY);
 
-      // scroll(elFrom, elTo, 100);
+        var elTo = document.querySelector(elFrom.getAttribute('href'));
+        var toY = elTo.getBoundingClientRect().top;
+        console.log('toY ' + toY);
+
+        //elTo.offsetTop;
+        scroll(fromY,toY, 300)
     }
 
 }, false);
 
 
-function scroll(elementFrom, elTo, duration) {
-
-    console.log("fromY "+ document.body.scrollTop);
-   // console.log("elementTo "+ to );
-    console.log('toY ' + elTo.offsetTop);
-
-    fromY = document.body.scrollTop;
-    toY = elTo.offsetTop;
-
-    var distance = Math.abs(fromY - toY);
-    console.log('distance ' + distance);
-
-    var perStep = distance / duration;
-    console.log('perStep '+ perStep);
-
-
-    while (perStep < distance) {
-        perStep = perStep + perStep;
-        console.log('perStepCurrent ' + perStep);
-        if (elementFrom > elTo) {
-            window.scrollBy(0, -perStep);
+function scroll(from, to, time) {
+    var oneFrameLength = 16;
+    var currentY = from;
+    var step;
+    step = Math.abs(to - from) / time;
+    console.log('distance ' + Math.abs(to -from));
+    console.log('step ' + step);
+    //var step = Math.abs(to - from) / time;
+    requestAnimationFrame(function animate() {
+        currentY += step;
+        document.body.scrollTop = currentY;
+        if (Math.abs(to - currentY) > 1) {
+            requestAnimationFrame(animate);
         }
-        else {
-            window.scrollBy(0, perStep);
-        }
-    }
+    });
 }
+
+/*
+function scroll(fromY, toY, interspace) {
+    // Do whatever
+    //console.log("fromY "+ document.body.scrollTop);
+    //fromY = document.body.scrollTop;
+    //toY = elTo.offsetTop;
+    //debugger;
+    var distance = toY - fromY;
+    console.log('distance ' + distance);
+    var step = distance / interspace;
+    console.log('perStep '+ step);
+
+    var numberCall = 1;
+    //document.body.scrollTop += perStep;
+    var currentY = document.body.scrollTop;
+
+    requestAnimationFrame(function animate() {
+
+
+        for (var i=0; i < interspace; i++ ) {
+            currentY += step;
+            document.body.scrollTop = currentY;
+            console.log('numberCall ' + numberCall++);
+            requestAnimationFrame(animate);
+        }
+    });
+
+}
+*/
