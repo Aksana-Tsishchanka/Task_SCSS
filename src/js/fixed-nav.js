@@ -34,8 +34,8 @@ document.addEventListener('click', function(event) {
         event.preventDefault();
 
         //var fromY = event.target.getBoundingClientRect().top;
-        //var fromY = event.offsetY;
-        var fromY = document.body.scrollTop;
+        var fromY = event.offsetY;
+        //var fromY = document.body.scrollTop;
         console.log('fromY ' + fromY);
 
         var elTo = document.querySelector(elFrom.getAttribute('href'));
@@ -43,31 +43,29 @@ document.addEventListener('click', function(event) {
         console.log('toY ' + toY);
 
         //elTo.offsetTop;
-        scroll(fromY,toY, 300)
+        scroll(fromY,toY, 30)
     }
 
 }, false);
 
 
 function scroll(from, to, time) {
-    var oneFrameLength = 16;
     var currentY = from;
-    var step;
-    step = Math.abs(to - from) / time;
+    var step = (to - from) / time;
     console.log('distance ' + Math.abs(to -from));
     console.log('step ' + step);
-    //var step = Math.abs(to - from) / time;
     requestAnimationFrame(function animate() {
         currentY += step;
-        document.body.scrollTop = currentY;
+        document.body.scrollTop += step;
         if (Math.abs(to - currentY) > 1) {
             requestAnimationFrame(animate);
         }
     });
 }
 
-/*
-function scroll(fromY, toY, interspace) {
+
+
+function scroll1(fromY, toY, interspace) {
     // Do whatever
     //console.log("fromY "+ document.body.scrollTop);
     //fromY = document.body.scrollTop;
@@ -80,18 +78,12 @@ function scroll(fromY, toY, interspace) {
 
     var numberCall = 1;
     //document.body.scrollTop += perStep;
-    var currentY = document.body.scrollTop;
+    //var currentY = fromY;
 
-    requestAnimationFrame(function animate() {
-
-
-        for (var i=0; i < interspace; i++ ) {
-            currentY += step;
-            document.body.scrollTop = currentY;
-            console.log('numberCall ' + numberCall++);
-            requestAnimationFrame(animate);
-        }
-    });
-
+    //currentY += step;
+    for (var i=0; i < interspace; i++ ) {
+        
+        document.body.scrollTop += step;
+        console.log('numberCall ' + numberCall++);
+    }
 }
-*/
