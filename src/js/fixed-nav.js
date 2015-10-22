@@ -33,24 +33,30 @@ document.addEventListener('click', function(event) {
 
         event.preventDefault();
 
-        //var fromY = event.target.getBoundingClientRect().top;
+
+        //var fromY = elFrom.getBoundingClientRect().top + document.body.scrollTop;
         var fromY = event.offsetY;
-        //var fromY = document.body.scrollTop;
         console.log('fromY ' + fromY);
 
         var elTo = document.querySelector(elFrom.getAttribute('href'));
         var toY = elTo.getBoundingClientRect().top;
+
         console.log('toY ' + toY);
 
-        //elTo.offsetTop;
-        scroll(fromY,toY, 30)
+        scroll(fromY,toY, 100)
     }
 
 }, false);
 
 
+/**
+ * @param from {number} -
+ * @param to {number} -
+ * @param time {number} -
+ */
 function scroll(from, to, time) {
     var currentY = from;
+    console.log('currentY ' + currentY);
     var step = (to - from) / time;
     console.log('distance ' + Math.abs(to -from));
     console.log('step ' + step);
@@ -66,11 +72,7 @@ function scroll(from, to, time) {
 
 
 function scroll1(fromY, toY, interspace) {
-    // Do whatever
-    //console.log("fromY "+ document.body.scrollTop);
-    //fromY = document.body.scrollTop;
-    //toY = elTo.offsetTop;
-    //debugger;
+
     var distance = toY - fromY;
     console.log('distance ' + distance);
     var step = distance / interspace;
