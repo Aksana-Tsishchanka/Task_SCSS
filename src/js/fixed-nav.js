@@ -34,13 +34,13 @@ document.addEventListener('click', function(event) {
         event.preventDefault();
 
 
-        //var fromY = elFrom.getBoundingClientRect().top + document.body.scrollTop;
-        var fromY = event.offsetY;
+        var fromY = event.pageY;
+        //var fromY = event.offsetY;
         console.log('fromY ' + fromY);
 
         var elTo = document.querySelector(elFrom.getAttribute('href'));
-        var toY = elTo.getBoundingClientRect().top;
-
+        var toY = elTo.getBoundingClientRect().top + document.body.scrollTop;
+        //var toY = elTo.getBoundingClientRect().top;
         console.log('toY ' + toY);
 
         scroll(fromY,toY, 100)
