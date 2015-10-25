@@ -33,36 +33,29 @@ document.addEventListener('click', function(event) {
 
         event.preventDefault();
 
-
-        var fromY = event.pageY;
-        //var fromY = event.offsetY;
-        console.log('fromY ' + fromY);
-
         var elTo = document.querySelector(elFrom.getAttribute('href'));
-        var toY = elTo.getBoundingClientRect().top + document.body.scrollTop;
-        //var toY = elTo.getBoundingClientRect().top;
-        console.log('toY ' + toY);
-
-        scroll(fromY,toY, 100)
+        var toY = elTo.getBoundingClientRect().top;
+        //scrollChecking(fromY,toY, 100);
+        scroll(toY, 100);
     }
 
 }, false);
 
 
 /**
- * @param from {number} -
- * @param to {number} -
- * @param time {number} -
+ * @param to {number} - position of the destination relative to current viewport position
+ * @param interspace {number} - number of segments, that split animation; 
  */
-function scroll(from, to, time) {
-    var currentY = from;
-    console.log('currentY ' + currentY);
-    var step = (to - from) / time;
-    console.log('distance ' + Math.abs(to -from));
-    console.log('step ' + step);
+function scroll(to, interspaces) {
+    var currentY = 0;   //relative Y to current viewport position
+    var currentScrollPosition = document.body.scrollTop;   
+    var step = to / interspaces;
+    
     requestAnimationFrame(function animate() {
         currentY += step;
-        document.body.scrollTop += step;
+        currentScrollPosition += step
+        document.body.scrollTop = currentScrollPosition;
+
         if (Math.abs(to - currentY) > 1) {
             requestAnimationFrame(animate);
         }
@@ -71,21 +64,11 @@ function scroll(from, to, time) {
 
 
 
-function scroll1(fromY, toY, interspace) {
-
+function scrollChecking(fromY, toY, interspace) {
     var distance = toY - fromY;
-    console.log('distance ' + distance);
     var step = distance / interspace;
-    console.log('perStep '+ step);
 
-    var numberCall = 1;
-    //document.body.scrollTop += perStep;
-    //var currentY = fromY;
-
-    //currentY += step;
-    for (var i=0; i < interspace; i++ ) {
-        
+    while (Math.abs(toY - document.body.scrollTop) >= 1) {
         document.body.scrollTop += step;
-        console.log('numberCall ' + numberCall++);
     }
 }
