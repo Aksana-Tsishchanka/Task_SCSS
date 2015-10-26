@@ -24,18 +24,13 @@ function startWith(input, data) {
 }
 
 document.addEventListener('click', function(event) {
-    //debugger;
     event = event || window.event;
-
     var elFrom = event.target || event.srcElement;
 
     if (startWith('#', elFrom.getAttribute('href')) && document.querySelector(elFrom.getAttribute('href'))) {
-
-        event.preventDefault();
-
+        event.preventDefault(); //remove default action of brawser
         var elTo = document.querySelector(elFrom.getAttribute('href'));
-        var toY = elTo.getBoundingClientRect().top;
-        //scrollChecking(fromY,toY, 100);
+        var toY = elTo.getBoundingClientRect().top; //distance between the left top corner of viewport
         scroll(toY, 100);
     }
 
@@ -43,33 +38,24 @@ document.addEventListener('click', function(event) {
 
 
 /**
- * Animate scrolling
- * @param to {number} - position of the destination relative to current viewport position
- * @param interspace {number} - number of segments, that split animation; 
+ * Animate scrolling: the initial position (from)- it is the left top corner of viewport, not document.body.scrollTop;
+ * @param offset {number} - offset, difference between initial and final position;
+ * @param interspace {number} - number of segments, that split animation; the frequency of the call animation;
  */
-function scroll(to, interspaces) {
+function scroll(offset, interspaces) {
     var currentY = 0;   //relative Y to current viewport position
     var currentScrollPosition = document.body.scrollTop;   
-    var step = to / interspaces;
+    var step = offset / interspaces;
     
     requestAnimationFrame(function animate() {
         currentY += step;
         currentScrollPosition += step
+        //debugger;
         document.body.scrollTop = currentScrollPosition;
 
-        if (Math.abs(to - currentY) > 1) {
+        if (Math.abs(offset - currentY) > 1) {
             requestAnimationFrame(animate);
         }
     });
 }
 
-
-
-function scrollChecking(fromY, toY, interspace) {
-    var distance = toY - fromY;
-    var step = distance / interspace;
-
-    while (Math.abs(toY - document.body.scrollTop) >= 1) {
-        document.body.scrollTop += step;
-    }
-}

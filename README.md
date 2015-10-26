@@ -6,4 +6,5 @@ It downloads all dependecies
 
 Useful commands:
 install package globally-> npm install -g jshint
+generat documentation-> jsdoc src/js/fixed-nav.js
 
