@@ -31,7 +31,7 @@ document.addEventListener('click', function(event) {
         event.preventDefault(); //remove default action of brawser
         var elTo = document.querySelector(elFrom.getAttribute('href'));
         var toY = elTo.getBoundingClientRect().top; //distance between the left top corner of viewport
-        scroll(toY, 100);
+        scroll(toY, 200);
     }
 
 }, false);
@@ -49,7 +49,7 @@ function scroll(offset, interspaces) {
     
     requestAnimationFrame(function animate() {
         currentY += step;
-        currentScrollPosition += step
+        currentScrollPosition += step;
         //debugger;
         document.body.scrollTop = currentScrollPosition;
 

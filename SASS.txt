@@ -1,0 +1,50 @@
+$break-small: 320px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens-land {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation:landscape) {
+      @content;
+    }
+  }
+  @else if $media == medium-screens-portr {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation:portrait) {
+      @content;
+    }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation:landscape) {
+      @content;
+    }
+  }
+  @else if $media == wide-screens and (orientation:landscape) {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+
+@mixin grid-container {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include respond-to(handhelds) {
+    max-width: get-value-in-vh(1100px);
+  }
+  @include respond-to(medium-screens-land) {
+    max-width: 90vw;
+  }
+  @include respond-to(medium-screens-portr) {
+    max-width: 90%;
+  }
+  @include respond-to(wide-screens) {
+    max-width: get-value-in-vh($max-width-grid-container-px);
+  }
+
+  //max-width: $max-width-grid-container;
+  margin: 0 auto;
+  @include clearfix;
+}

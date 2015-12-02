@@ -5,12 +5,11 @@ $base-color: #FFFFFF;
 $second-color: #a93d8b;
 $max-width-grid-container: 1145px;
 $viewport-height: 1100px;
-$gutter: 32px / $max-width-grid-container * 100%;
 $base-color-about-nav: #676767;
 $base-color-nav: #765c5c;
-$margin-indent-home-nav: 185px / $viewport-height * 100vh;
+$margin-indent-home-nav: 185px;
 $max-width-grid-container: 1145px/$viewport-height * 100vh;
-$gutter: 32px / $viewport-height * 100vh;
+$gutter: 32px;
 $font-color-about: #79447b;
 $statistic-bg-color: #eeeeee;
 $font-after: #907676;
@@ -25,12 +24,49 @@ $ui-ux__bg-percents: 85%;
 $color-bg-substrate: #f0f0f0;
 $color-text-percents: #856b6b;
 
+$gutter-percents: 2%;
+$break-small: 320px;
+$break-large: 1024px;
+$init-px-rem: 16px;
+$max-width-grid-container-mobile: 98%;
+
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens-land {
+    @media only screen and (min-width: $break-small +1) and (max-width: $break-large - 1) and (orientation:landscape) {
+      @content;
+    }
+  }
+  @else if $media == medium-screens-portr {
+    @media only screen and (max-width: $break-large - 1) and (orientation:portrait) {
+      @content;
+    }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation:landscape) {
+      @content;
+    }
+  }
+  @else if $media == wide-screens and (orientation:landscape) {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else if $media == small-media-screens {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+}
+
 
 @mixin grid-container {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
   max-width: $max-width-grid-container;
+  @include respond-to(small-media-screens) {
+    max-width: $max-width-grid-container-mobile;
+  }
   margin: 0 auto;
   @include clearfix;
 }
@@ -45,19 +81,43 @@ $color-text-percents: #856b6b;
   }
 }
 
+@function get-value-vw($number) {
+  @return $number / 1100px * 100vw;
+}
+
+@function get-value-vh($number) {
+  @return $number / 1100px * 100vh;
+}
+
+@function get-value-rem($value-px, $denominator: 1) {
+  @return $value-px / $init-px-rem * 1rem / $denominator;
+}
+
+
+
 @mixin column-col($n) {
-  width: $n * ($max-width-grid-container + $gutter) / 12 - $gutter;
+  width: $n * ($max-width-grid-container + get-value-vh($gutter)) / 12 - get-value-vh($gutter);
+  @include respond-to(small-media-screens) {
+    width: $n * (100% + $gutter-percents) / 12 - $gutter-percents;
+  }
   box-sizing: border-box;
   float: left;
   @include margin-right;
 }
 
 @mixin offsets-column($n) {
-  margin-left: $n * ($max-width-grid-container + $gutter) / 12;
+  margin-left: $n * ($max-width-grid-container + get-value-vh($gutter)) / 12;
+  @include respond-to(small-media-screens) {
+    margin-left: $n * (100% + $gutter-percents) / 12;
+  }
 }
 
 @mixin margin-right {
-  margin-right: $gutter;
+  margin-right: get-value-vh($gutter);
+
+  @include respond-to(medium-screens-land) {
+    margin-right: $gutter-percents;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -94,7 +154,11 @@ $color-text-percents: #856b6b;
 }
 
 @mixin margin-direction($direction) {
-  margin-#{$direction}: $margin-indent-home-nav;
+  margin-#{$direction}: get-value-vh($margin-indent-home-nav);
+
+  @include respond-to(small-media-screens) {
+    margin-#{$direction}: get-value-rem($margin-indent-home-nav,3);
+  }
 }
 
 @mixin spans-color($first-color,$second-color) {

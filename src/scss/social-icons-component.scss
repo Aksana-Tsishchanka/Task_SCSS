@@ -2,13 +2,11 @@
 
 .social-icons {
   @include clearfix;
-  margin-left: 80px / $viewport-height * 100vh;
-
-
+  //margin-left: 80px / $viewport-height * 100vh;
   .social-icon {
     padding-bottom: 70px / $viewport-height * 100vh;
     width:25%;
-    float: left;
+    display: inline-block;
     padding-left: 3vh;
     cursor: pointer;
     opacity: 0.7;
@@ -23,10 +21,12 @@
 
 .icon__facebook {
   @include background-style("team/icon_facebook.png");
+  background-position: right;
 
 }
 .icon__google {
   @include background-style("team/icon_google.png");
+  background-position: left;
 }
 
 .icon__twitter {

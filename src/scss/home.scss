@@ -2,8 +2,25 @@
 @import "fonts";
 
 
-body {
-  font: 100% $font-size $font-stack;
+html {
+  font-size: $font-size;
+  @include respond-to(medium-screens-portr) {
+    font-size: 20px;
+  }
+  @include respond-to(medium-screens-land) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 569px) and (orientation:landscape) { /*Iphone 5s*/
+   font-size: 10px;
+  }
+  @media screen and (min-width: 570px) and (max-width: 737px) and (orientation:landscape) { /*Iphone 6, Iphone 6s plus*/
+  font-size: 10px;
+  }
+  @media screen and (min-width: 738px) and (max-width: 773px) and (orientation:landscape) { /*Iphone 6, Iphone 6s plus*/
+    font-size: 13px;
+  }
+
 }
 
 img, object {
@@ -18,10 +35,15 @@ object {
   height: 100vh;
   @include background-image("header/header_bg.png");
   background-position: center;
+  @include respond-to(small-media-screens) {
+    height: auto;
+    background-size: cover;
+  }
 }
 
 #home header {
   @include grid-container;
+
   h1 {
     @include zeroing-margin-pad;
     padding-top: 85px / $viewport-height * 100vh;
@@ -29,17 +51,30 @@ object {
     font-family: 'Existence_light';
     font-size: 90px/$viewport-height * 100vh;
     @include spans-color($base-color,$second-color);
+    @include respond-to(small-media-screens) {
+      padding-top: get-value-rem(85px,5);
+      padding-bottom: get-value-rem(80px,5);
+      font-size: get-value-rem(90px);
+    }
   }
   h2 {
     @include zeroing-margin-pad;
     margin-bottom: 34px / $viewport-height * 100vh;
     font-family: 'Lato_hairline';
     font-size: 48px / $viewport-height * 100vh;
+    @include respond-to(small-media-screens) {
+      margin-bottom: get-value-rem(34px,5);
+      font-size: get-value-rem(48px);
+    }
   }
   h3 {
     margin-bottom: 110px /$viewport-height * 100vh;
     font-size: 24px / $viewport-height * 100vh;
     font-family: 'Lato_hairline';
+    @include respond-to(small-media-screens) {
+      margin-bottom: get-value-rem(110px,5);
+      font-size: get-value-rem(24px*1.4);
+    }
   }
 }
 .base-color {
@@ -51,14 +86,20 @@ object {
 }
 
 .home-nav {
-  @include grid-container;
+  //@include grid-container;
   font-size: 18px / $viewport-height * 100vh;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(18px*1.4);
+  }
   @include list-style-none;
   @include zeroing-margin-pad;
   @include clearfix;
 
   &-item {
-    padding-bottom: $margin-indent-home-nav;
+    padding-bottom: get-value-vh($margin-indent-home-nav);
+    @include respond-to(small-media-screens) {
+      padding-bottom: get-value-rem($margin-indent-home-nav);
+    }
     height: 0;
     opacity: 0.5;
     transition: opacity 1s;
@@ -67,16 +108,15 @@ object {
       opacity: 1;
     }
   }
-
-
 }
 
 .home-nav-item__about {
   @include column-col(2);
+  @include respond-to(small-media-screens) {
+    padding-bottom: get-value-rem($margin-indent-home-nav);
+  }
   @include background-style("header/header_nav/about.svg");
   @include margin-direction("top");
-
-
 }
 
 .home-nav-item__team {
@@ -108,8 +148,13 @@ object {
 }
 
 .home-nav-title {
-  position: relative;
-  top: 123px /$viewport-height * 100vh;
+  padding-top: 123px /$viewport-height * 100vh;
+  @include respond-to(small-media-screens) {
+    padding-top: get-value-rem(123px,1.2);
+  }
+  display: inline-block;
+  width: 100%;
+  text-align: center;
   text-align: center;
   color: $base-color;
   font-family: "Lato_regular";
@@ -120,8 +165,13 @@ object {
 }
 
 .home-scroll {
-  @include column-col(2);
-  @include offsets-column(5);
+  width: get-value-vh(160px);
+  @include respond-to(small-media-screens) {
+    padding-top: get-value-rem(160px,2);
+    padding-bottom: get-value-rem(109px,2);
+  }
+  margin: 0 auto;
+  display: block;
   padding-bottom: 109px /$viewport-height * 100vh;
   @include background-style("header/header_scroller/scroller.png");
   opacity: 0.5;

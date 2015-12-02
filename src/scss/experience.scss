@@ -1,8 +1,13 @@
 @import "mixins";
 
+.experience {
+  @include clearfix();
+  margin: 0 auto;
+}
+
 .experience__web-d {
   @include offsets-column(1);
-  @include column-col(5);
+  @include column-col(4);
 }
 
 .experience-web-d__bg {
@@ -12,11 +17,11 @@
 }
 
 .experience__graphic-d {
-  @include column-col(5);
+  @include offsets-column(2);
+  @include column-col(4);
+
   @include omega(2);
-  @include offsets-column(1);
   padding-bottom: 20px / $viewport-height * 100vh;
-  //background-color: #f0f0f0;
 }
 .experiense-text {
   @include clearfix;

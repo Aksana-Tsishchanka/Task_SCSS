@@ -8,6 +8,13 @@
   width: 300px / 1100px * 100vh;
   height: 125px / 1100px * 100vh;
   margin-bottom: 130px / 1100px * 100vh;
+  @include respond-to(small-media-screens) {
+    width: get-value-rem(300px);
+    height: get-value-rem(125px);
+    margin-top: get-value-rem(150px,1.5);
+    margin-bottom: get-value-rem(130px,3);
+  }
+
 }
 
 .bracket-header__text {
@@ -19,4 +26,9 @@
   font-weight: bold;
   padding-top: 37px / 1100px * 100vh;
   padding-bottom: 28px / 1100px * 100vh;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(48px);
+    padding-top: get-value-rem(37px,1.5);
+    padding-bottom: get-value-rem(28px,3);
+  }
 }

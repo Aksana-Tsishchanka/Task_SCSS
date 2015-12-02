@@ -55,28 +55,36 @@ nav  {
   z-index: 1;
   top: 0;
   width: 100%;
-  //padding-top: 57px / 1100px * 100vh;
-  //padding-bottom: 44px / 1100px * 100vh;
 }
 
 
 .about-logo {
   @include column-col(2);
-  font-size: 30px / 1100px * 100vh;
-  box-sizing: border-box;
+  display: inline-block;
+  margin-right: auto;
+  font-size: get-value-vh(30px);
   font-family: "Existence_light";
   font-weight: bold;
   line-height: 1;
   @include spans-color($base-color-about-nav, $second-color);
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(30px);
+    margin-left: 2%;
+  }
 }
 
 .about-menu {
   @include column-col(8);
-  @include offsets-column(2);
+  //@include offsets-column(2);
+  float: right;
+  text-align: right;
   @include zeroing-margin-pad;
   line-height: (18px + 30px/2) / 18px;
-  font-size: 18px / 1100px * 100vh;
-  float: right;
+  font-size: get-value-vh(18px);
+  //float: right;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(18px);
+  }
 }
 
 .about-menu-item {
@@ -99,8 +107,12 @@ nav  {
 
 .about-feature {
   background-color: $statistic-bg-color;  
-  padding-top: 165px/ $viewport-height * 100vh;
-  padding-bottom: 215px / 1100px * 100vh;
+  padding-top: get-value-vh(165px);
+  padding-bottom: get-value-vh(215px);
+  @include respond-to(small-media-screens) {
+    padding-top: get-value-rem(165px,6);
+    padding-bottom: get-value-rem(215px,6);
+  }
 }
 
 .about-feature-container {
@@ -116,11 +128,17 @@ nav  {
 
   h4 {
     font-size: 24px / 1100px * 100vh;
+    @include respond-to(small-media-screens) {
+      font-size: get-value-rem(24px);
+    }
   }
 
   .about-feature-item-description {
     font-size: 16px / 1100px * 100vh;
     line-height: (16px + 30px/2) / 16px;
+    @include respond-to(small-media-screens) {
+      font-size: get-value-rem(16px*1.2);
+    }
   }
 }
 
@@ -170,20 +188,11 @@ nav  {
     font-size: 16px / 1100px * 100vh;
     font-family: "Lato_light";
     line-height: (16px + 36px/ 2) / 16px;
+    @include respond-to(small-media-screens) {
+      font-size: get-value-rem(16px*1.2);
+      margin-bottom: get-value-rem(130px,3);
+    }
   }
-
-  /*.about-button {
-    background-color: $second-color;
-    border-radius: 4px;
-    width: 230px / $viewport-height * 100vh;
-    height: 70px / $viewport-height * 100vh;
-    border-width: 5px;
-    border-bottom: solid #6b2e68;
-    font-size: 20px / 1100px * 100vh;
-    color: #fff;
-    line-height: 70px / $viewport-height * 100vh;  /!*(for centering text vertically)*!/
-    cursor: pointer;
-    }*/
 }
 
 .quote-section {
@@ -198,7 +207,11 @@ nav  {
 .quote-study-icon {
   @include offsets-column(5);
   @include column-col(2);
-  margin-top: 154px/ 1100px * 100vh;;
+  margin-top: 154px/ 1100px * 100vh;
+  @include respond-to(small-media-screens) {
+    margin-bottom: get-value-rem(130px,3);
+  }
+
 }
 
 .quote-study-text {

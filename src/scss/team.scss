@@ -5,6 +5,9 @@
 #team {
     @include grid-container;
     padding-bottom: 18.18182vh;
+    @include respond-to(small-media-screens) {
+        padding-bottom: get-value-rem(40px,2);
+    }
 }
 
 .team-header {
@@ -39,10 +42,12 @@
     }
         .team-arrow-left {
             @include background-style("team/arrow-left.png");
+            background-position: right;
         }
 
         .team-arrow-right {
             @include background-style("team/arrow-right.png");
+            background-position: left;
         }
 }
 
@@ -52,8 +57,6 @@
 
 .team-player {
     @include column-col(4);
-
-
 }
 
 .team-player-photo {
@@ -68,6 +71,10 @@
     font-family: "Lato_bold";
     padding-top: 65px / $viewport-height * 100vh;
     @include  centered_text();
+    @include respond-to(small-media-screens) {
+        font-size: get-value-rem(24px,1.2);
+        padding-top: get-value-rem(65px,5);
+    }
 }
 
 .team-player-title {
@@ -75,7 +82,11 @@
     font-family: "Lato_light";
     padding-top: 15px / $viewport-height * 100vh;
     padding-bottom: 22px / $viewport-height * 100vh;
-
     @include  centered_text();
+    @include respond-to(small-media-screens) {
+        font-size: get-value-rem(18px);
+        padding-top: get-value-rem(15px,3);
+        padding-bottom: get-value-rem(22px,3);
+    }
 }
 
