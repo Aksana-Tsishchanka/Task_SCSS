@@ -6,8 +6,8 @@
   @include grid-container;
   padding-bottom: 168px / $viewport-height * 100vh ;
 
-  &-header {
-
+  @include respond-to(small-media-screens) {
+    padding-bottom: get-value-rem(168px,5);
   }
 }
 
@@ -45,6 +45,11 @@
     padding-top: 10px / $viewport-height * 100vh;
     box-sizing: border-box;
     font-family: "MyriadPro-Regular";
+    @include respond-to(small-media-screens) {
+      margin-bottom: get-value-rem(35px);
+      padding-left: get-value-rem(34px);
+      padding-top: get-value-rem(10px);
+    }
   }
 
   textarea {
@@ -52,24 +57,36 @@
   }
   input {
     height: 75px / $viewport-height * 100vh;
-
+    @include respond-to(small-media-screens) {
+     height: get-value-rem(75px);
+    }
   }
   input[placeholder], textarea[placeholder] {
     font-size: 23px / $viewport-height * 100vh;
+    @include respond-to(small-media-screens) {
+      font-size: get-value-rem(23px);
+    }
   }
 }
 
 .contact-info__description {
-  font-size: 23px / $viewport-height * 100vh;
-
+  font-size: get-value-vh(23px);
   color: $first-letter-color;
-  padding-bottom: 54px / $viewport-height * 100vh;
+  padding-bottom: get-value-vh(54px);
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(23px);
+    padding-bottom: get-value-rem(54px);
+  }
 }
 .contact-info__adress {
   color: $contact-text;
   font-size: 28px / $viewport-height * 100vh;
   line-height: (28px + 38px/2) / 38px;
   padding-bottom: 40px / $viewport-height * 100vh;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(28px);
+    padding-bottom: get-value-rem(40px);
+  }
 }
 
 .contact-info__phone {
@@ -90,6 +107,9 @@
 .contact-button-container {
   padding-top: 60px / $viewport-height * 100vh;
   text-align: left;
+  @include respond-to(small-media-screens) {
+    padding-top: get-value-rem(60px,5);
+  }
 }
 .contact-button {
   @extend .portfolio-button;
@@ -99,7 +119,11 @@
 .footer-logo {
   @include grid-container;
   @include spans-color($base-color-about-nav,$second-color);
-  font-size: 51px / $viewport-height * 100vh;
+  font-size: get-value-vh(51px);
   font-family: "MyriadPro-Regular";
-  padding-bottom: 130px / $viewport-height * 100vh;
+  padding-bottom: get-value-vh(130px);
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(51px);
+    padding-bottom: get-value-rem(130px,5);
+  }
 }

@@ -3,7 +3,7 @@
 
 .skill-section {
   @include grid-container;
-  padding-bottom: 195px / $viewport-height * 100vh;
+  padding-bottom: get-value-vh(195px);
 }
 
 .skill-header {
@@ -17,35 +17,49 @@
 
 .statistic-section {
   @include grid-container;
-  padding-top: 160px / $viewport-height * 100vh;
-  padding-bottom: 95px / $viewport-height * 100vh;
+  padding-top: get-value-vh(160px);
+  padding-bottom: get-value-vh(95px);
   font-family: "HelveticaNeueLTStd-Lt";
 }
 
 .statistic-index {
-  margin-bottom: 140px / $viewport-height * 100vh;
+  margin-bottom: get-value-vh(140px);
+  @include respond-to(small-media-screens) {
+    margin-bottom: get-value-rem(140px);
+  }
+
   div {
     @include column-col(3);
-    font-size: 64px / $viewport-height * 100vh;
+    font-size: get-value-vh(64px);
     text-align: center;
+    @include respond-to(small-media-screens) {
+      font-size: get-value-rem(64px);
+    }
 
     &::after {
       content: "Lorem ipsum";
-      font-size: 16px / $viewport-height * 100vh;
+      font-size: get-value-vh(16px);
       color: $base-color-about-nav;
       display: block;
+      @include respond-to(small-media-screens) {
+        font-size: get-value-rem(16px*1.5);
+      }
     }
   }
 }
 .statistic-player {
   color: $base-color-about-nav;
-
+  @include clearfix();
   &-photo {
+    @include clearfix();
     @include offsets-column(5);
     @include column-col(2);
     @include omega(1);
     @include background-style("team/photo.png");
-    padding-bottom: 185px / $viewport-height * 100vh;
+    padding-bottom: get-value-vh(185px);
+    @include respond-to(small-media-screens) {
+      padding-bottom: get-value-rem(185px);
+    }
   }
 }
 
@@ -54,33 +68,45 @@
   @include offsets-column(1);
   @include column-col(10);
   @include omega(1);
-  font-size: 33px / $viewport-height * 100vh;
+  font-size: get-value-vh(33px);
   line-height: 33px * 120% / 100%;
-  padding-bottom: 30px / $viewport-height * 100vh;
+  padding-bottom: get-value-vh(30px);
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(33px);
+    padding-bottom: get-value-rem(30px);
+  }
 }
 
 .statistic-player-name {
-  font-size: 20px / $viewport-height * 100vh;
+  font-size: get-value-vh(20px);
   font-family: "Lato_bold";
   @include offsets-column(4);
   @include column-col(4);
-  padding-bottom: 50px / $viewport-height * 100vh;
+  padding-bottom: get-value-vh(50px);
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(20px);
+    padding-bottom: get-value-rem(50px);
+  }
 }
 
 .statistic-nav {
-  @include offsets-column(5);
-  @include column-col(2);
-  text-align: center;
+  //@include offsets-column(5);
+  //@include column-col(2);
+  @include clearfix();
+  margin: 0 auto;
     
   .round {
     @include background-style("statistic/ellipse-nav.svg");
-    //width: 13px / $viewport-height * 100vh;
-    //padding-right: 7px / $viewport-height * 100vh;
-    padding-bottom: 30px / $viewport-height * 100vh;
-    width: 13px / $viewport-height * 100vh;
-    padding-right: 7px / $viewport-height * 100vh;
+    padding-bottom: get-value-vh(30px);
+    width: get-value-vh(13px);
+    padding-right: get-value-vh(7px);
     display: inline-block;
     box-sizing: border-box;
+    @include respond-to(small-media-screens) {
+      padding-right: get-value-rem(30px);
+      width: get-value-rem(13px);
+      padding-bottom: get-value-rem(30px);
+    }
   }
 
   .clear {

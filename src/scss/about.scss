@@ -69,21 +69,19 @@ nav  {
   @include spans-color($base-color-about-nav, $second-color);
   @include respond-to(small-media-screens) {
     font-size: get-value-rem(30px);
-    margin-left: 2%;
   }
 }
 
 .about-menu {
   @include column-col(8);
-  //@include offsets-column(2);
   float: right;
   text-align: right;
   @include zeroing-margin-pad;
   line-height: (18px + 30px/2) / 18px;
   font-size: get-value-vh(18px);
-  //float: right;
   @include respond-to(small-media-screens) {
     font-size: get-value-rem(18px);
+    width: 77%;
   }
 }
 

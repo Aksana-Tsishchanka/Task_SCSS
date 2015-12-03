@@ -36,6 +36,10 @@
         transition: opacity 0.5s;
         float: left;
 
+        @include respond-to(small-media-screens) {
+            padding-bottom: get-value-rem(90px);
+        }
+
         &:hover {
             opacity: 1;
         }
@@ -63,6 +67,9 @@
     @include background-style("team/photo.png");
     background-size: contain;
     padding-bottom: 245px / $viewport-height * 100vh;
+    @include respond-to(small-media-screens) {
+        padding-bottom: get-value-rem(245px);
+    }
 
 }
 
@@ -72,7 +79,7 @@
     padding-top: 65px / $viewport-height * 100vh;
     @include  centered_text();
     @include respond-to(small-media-screens) {
-        font-size: get-value-rem(24px,1.2);
+        font-size: get-value-rem(24px,1);
         padding-top: get-value-rem(65px,5);
     }
 }
@@ -84,7 +91,7 @@
     padding-bottom: 22px / $viewport-height * 100vh;
     @include  centered_text();
     @include respond-to(small-media-screens) {
-        font-size: get-value-rem(18px);
+        font-size: get-value-rem(18px*1.1);
         padding-top: get-value-rem(15px,3);
         padding-bottom: get-value-rem(22px,3);
     }

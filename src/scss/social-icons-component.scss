@@ -2,15 +2,18 @@
 
 .social-icons {
   @include clearfix;
-  //margin-left: 80px / $viewport-height * 100vh;
+
   .social-icon {
-    padding-bottom: 70px / $viewport-height * 100vh;
+    padding-bottom: get-value-vh(70px);
     width:25%;
     display: inline-block;
     padding-left: 3vh;
     cursor: pointer;
     opacity: 0.7;
 
+    @include respond-to(small-media-screens) {
+      padding-bottom: get-value-rem(70px);
+    }
     &:hover {
       opacity: 1;
       transition: opacity 0.3s;

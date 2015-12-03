@@ -3,24 +3,30 @@
 .component-button {
   background-color: $second-color;
   border-radius: 4px;
-  width: 230px / $viewport-height * 100vh;
-  height: 70px / $viewport-height * 100vh;
+  width: get-value-vh(230px);
+  height: get-value-vh(70px);
   border-width: 1px;
   border-bottom: solid $color-button-border;
-  font-size: 20px / 1100px * 100vh;
+  font-size: get-value-vh(20px);
   font-family: "Existence_light";
   color: $base-color;
-  line-height: 70px / $viewport-height * 100vh;  /*(for centering text vertically)*/
+  line-height: get-value-vh(70px);  /*(for centering text vertically)*/
   cursor: pointer;
   transition: border-bottom-width  0.4s;
 
+  @include respond-to(small-media-screens) {
+    width: get-value-rem(230px);
+    height: get-value-rem(70px);
+    font-size: get-value-rem(20px);
+    line-height: get-value-rem(70px);
+  }
   &:hover {
-    border-bottom-width: 0px;
+    border-bottom-width: 0;
   }
 
   &:focus {
     outline: 0;
-    border: solid 0px $color-button-border;
+    border: solid 0 $color-button-border;
   }
 }
 

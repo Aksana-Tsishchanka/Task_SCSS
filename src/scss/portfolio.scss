@@ -16,14 +16,13 @@
 }
 
 .portfolio-nav {
-    clear: left;
     width: 100%;
     text-align: center;
 }
 
 .portfolio-nav-item {
-    width: 90px / $viewport-height * 100vh;
-    height: 40px / $viewport-height * 100vh;
+    width: get-value-vh(90px);
+    height: get-value-vh(40px);
     border: 1px solid black;
     box-sizing: border-box;
     display: inline-block;
@@ -35,6 +34,13 @@
     border-radius: 6px;
     @include omega(4);
     transition: all 0.4s;
+    @include respond-to(small-media-screens) {
+        width: get-value-rem(90px);
+        height: get-value-rem(40px);
+        margin-right: get-value-rem(20px);
+        font-size: get-value-rem(18px);
+        line-height: get-value-rem(40px);
+    }
 }
 
 .substrate {
@@ -80,17 +86,23 @@
 
 
 .portfolio-image-item__text {
-    font-size: 24px / $viewport-height * 100vh;
+    font-size: get-value-vh(24px);
     font-family: "HelveticaNeueLTStd-Lt";
     color: $portfolio-color-font;
     line-height: (24px + 27px / 2) / 27px;
+    @include respond-to(small-media-screens) {
+        font-size: get-value-rem(24px);
+    }
 }
 .portfolio-image-item__text:after {
     content: "apps, icons, ui";
     display: block;
-    font-size: 17px / $viewport-height * 100vh;
+    font-size: get-value-rem(17px);
     color: $font-after;
     line-height: (17px + 27px / 2) / 17px;
+    @include respond-to(small-media-screens) {
+        font-size: get-value-rem(17px);
+    }
 }
 
 .portfolio-button-container{

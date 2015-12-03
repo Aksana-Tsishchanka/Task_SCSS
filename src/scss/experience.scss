@@ -13,7 +13,7 @@
 .experience-web-d__bg {
   width: $web-d-percents;
   background-color: $second-color;
-  height: 20px / $viewport-height * 100vh;
+  height: 100%;
 }
 
 .experience__graphic-d {
@@ -30,26 +30,35 @@
 }
 
 .experiense-text__title {
-  font-size: 22px / $viewport-height * 100vh;
+  font-size: get-value-vh(22px);
   float: left;
   line-height: (22px + 18px / 2) / 22px;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(22px);
+  }
 }
 
 .experience-text__percent {
   float: right;
-  font-size: 24px / $viewport-height * 100vh;
+  font-size: get-value-vh(24px);
   line-height: (24px + 18px / 2) / 24px;
   color: $color-text-percents;
+  @include respond-to(small-media-screens) {
+    font-size: get-value-rem(24px);
+  }
 }
 
 .experience-graphic-d__bg {
   width: $graphic-d__bg-percents;
   background-color: $second-color;
-  height: 20px / $viewport-height * 100vh;
+  height: 100%;
 }
 
 .experience-line-bg {
-  height: 20px / $viewport-height * 100vh;
+  height: get-value-vh(20px);
+  @include respond-to(small-media-screens) {
+    height: get-value-rem(20px);
+  }
   background-color: $color-bg-substrate;
 }
 
@@ -60,7 +69,7 @@
 .experience-html-css__bg {
   width: $html-css__bg-percents;
   background-color: $second-color;
-  height: 20px / $viewport-height * 100vh;
+  height: 100%;
 }
 
 .experience__ui-ux {
@@ -70,5 +79,5 @@
 .experience-ui-ux__bg {
   width: $ui-ux__bg-percents;
   background-color: $second-color;
-  height: 20px / $viewport-height * 100vh;
+  height: 100%;
 }
