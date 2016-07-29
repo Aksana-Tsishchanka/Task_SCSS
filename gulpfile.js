@@ -14,8 +14,7 @@ var src = {
 };
 
 // Static Server + watching style.css/html files
-gulp.task('serve', ['fileinclude','sass'], function() {
-
+gulp.task('serve', ['fileinclude', 'sass', 'copy'], function() {
     browserSync.init({
         server: "./"
     });
@@ -26,11 +25,17 @@ gulp.task('serve', ['fileinclude','sass'], function() {
     gulp.watch("src/assets/*/*.*").on('change', browserSync.reload);
 });
 
+gulp.task('copy', function () {
+  return gulp
+    .src('node_modules/normalize.css/normalize.css')
+    .pipe(gulp.dest('build/css'));
+});
+
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("src/scss/style.scss")
+    return gulp.src('src/scss/style.scss')
         .pipe(sass())
-        .pipe(gulp.dest("build/css"))
+        .pipe(gulp.dest('build/css'))
         .pipe(browserSync.stream());
 });
 
