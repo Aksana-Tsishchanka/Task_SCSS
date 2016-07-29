@@ -1,4 +1,6 @@
-# Task_SCSS
+# Task_SCSS Resulp see here https://aksana-tsishchanka.github.io/Task_SCSS/
+This web site looks amazing on desktop version, tablet. Mobile version will be developed soon.
+Browser supports: IE11, Chrome, Safari, FireFox 
 1) in CLI run: npm update
 It downloads all dependecies
 
